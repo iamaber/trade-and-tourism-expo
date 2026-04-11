@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ITT Expo 2026 — International Trade & Tourism Expo</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Playfair+Display:ital,wght@0,900;1,900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/design-toggle.css">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --c-red: #E83B2E;
+  --c-blue: #1B4FD8;
+  --c-green: #1BAD6A;
+  --c-orange: #F5820A;
+  --c-purple: #7B2FBE;
+  --c-teal: #0FB5BE;
+  --c-yellow: #F5C518;
+  --c-white: #F7F4EE;
+  --c-black: #0A0A0A;
+  --c-ink: #111111;
+}
+html { scroll-behavior: smooth; }
+body { background: var(--c-white); color: var(--c-ink); font-family: 'Syne', sans-serif; overflow-x: hidden; }
+
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  background: var(--c-black); padding: 0 48px; height: 64px;
+  display: flex; align-items: center; justify-content: space-between;
+  border-bottom: 3px solid var(--c-yellow);
+}
+.nav-brand { font-family: 'Space Mono', monospace; font-size: 0.85rem; color: var(--c-white); letter-spacing: 0.1em; }
+.nav-brand span { color: var(--c-yellow); }
+.nav-pill {
+  background: var(--c-yellow); color: var(--c-black); font-family: 'Space Mono', monospace;
+  font-size: 0.7rem; font-weight: 700; padding: 8px 20px; text-decoration: none;
+  letter-spacing: 0.1em; text-transform: uppercase; transition: background 0.2s, color 0.2s;
+  border: 2px solid var(--c-yellow);
+}
+.nav-pill:hover { background: transparent; color: var(--c-yellow); }
+.nav-items { display: flex; gap: 32px; list-style: none; }
+.nav-items a {
+  color: rgba(247,244,238,0.5); font-size: 0.75rem; letter-spacing: 0.1em;
+  text-decoration: none; text-transform: uppercase; transition: color 0.2s;
+}
+.nav-items a:hover { color: var(--c-white); }
+
+.hero {
+  padding-top: 64px; min-height: 100vh;
+  display: grid; grid-template-columns: 1fr 1fr; position: relative; overflow: hidden;
+}
+.hero-left {
+  background: var(--c-black); padding: 80px 60px;
+  display: flex; flex-direction: column; justify-content: center;
+  position: relative; overflow: hidden;
+}
+.hero-label {
+  font-family: 'Space Mono', monospace; font-size: 0.65rem; color: var(--c-yellow);
+  letter-spacing: 0.3em; text-transform: uppercase; margin-bottom: 32px;
+  display: flex; align-items: center; gap: 12px;
+}
+.hero-label::before { content: ''; width: 24px; height: 2px; background: var(--c-yellow); }
+.hero-title {
+  font-family: 'Playfair Display', serif; font-style: italic;
+  font-size: clamp(3.5rem, 6vw, 6.5rem); font-weight: 900; color: var(--c-white);
+  line-height: 0.95; letter-spacing: -0.02em; margin-bottom: 12px;
+}
+.hero-title-block {
+  font-family: 'Syne', sans-serif; font-size: clamp(2.5rem, 5vw, 5rem);
+  font-weight: 800; color: var(--c-white); line-height: 1; letter-spacing: -0.03em; text-transform: uppercase;
+}
+.hero-year {
+  font-family: 'Space Mono', monospace; font-size: 8rem; color: rgba(245,197,24,0.08);
+  position: absolute; bottom: -20px; right: -20px; line-height: 1; pointer-events: none; font-weight: 700;
+}
+.hero-info { margin-top: 40px; display: flex; flex-direction: column; gap: 16px; }
+.hero-info-row {
+  display: flex; align-items: center; gap: 12px;
+  font-family: 'Space Mono', monospace; font-size: 0.75rem;
+  color: rgba(247,244,238,0.6); letter-spacing: 0.05em;
+}
+.hero-info-row .tag {
+  background: var(--c-yellow); color: var(--c-black); font-size: 0.6rem;
+  padding: 3px 8px; font-weight: 700; letter-spacing: 0.1em; flex-shrink: 0;
+}
+.hero-cta-row { margin-top: 48px; display: flex; gap: 16px; flex-wrap: wrap; }
+.btn-fill {
+  background: var(--c-red); color: var(--c-white); padding: 16px 36px;
+  font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.85rem;
+  text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase;
+  border: 2px solid var(--c-red); display: inline-block; position: relative; overflow: hidden;
+  transition: background 0.25s, color 0.25s;
+}
+.btn-fill::after {
+  content: ''; position: absolute; inset: 0; background: var(--c-white);
+  transform: translateX(-101%); transition: transform 0.3s cubic-bezier(0.16,1,0.3,1);
+}
+.btn-fill:hover::after { transform: translateX(0); }
+.btn-fill:hover { color: var(--c-red); }
+.btn-outline {
+  background: transparent; color: var(--c-white); padding: 16px 36px;
+  font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.85rem;
+  text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase;
+  border: 2px solid rgba(247,244,238,0.2); display: inline-block; transition: border-color 0.25s;
+}
+.btn-outline:hover { border-color: var(--c-white); }
+
+.hero-right { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr 1fr; }
+.panel {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 8px; font-family: 'Space Mono', monospace; font-size: 0.6rem;
+  letter-spacing: 0.15em; text-transform: uppercase; font-weight: 700;
+  cursor: default; transition: filter 0.3s; position: relative; overflow: hidden;
+}
+.panel:hover { filter: brightness(1.15); }
+.panel .panel-icon { font-size: 2.5rem; transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1); }
+.panel:hover .panel-icon { transform: scale(1.2) rotate(-5deg); }
+.panel-1 { background: var(--c-blue); color: white; }
+.panel-2 { background: var(--c-red); color: white; grid-row: span 2; }
+.panel-3 { background: var(--c-green); color: white; }
+.panel-4 { background: var(--c-orange); color: white; }
+.panel-5 { background: var(--c-purple); color: white; }
+.panel-6 { background: var(--c-teal); color: white; }
+.panel::before {
+  content: attr(data-num); position: absolute;
+  font-family: 'Playfair Display', serif; font-size: 5rem;
+  opacity: 0.06; bottom: -10px; right: 5px; font-weight: 900; line-height: 1;
+}
+
+.ticker {
+  background: var(--c-yellow); overflow: hidden; padding: 16px 0;
+  border-top: 3px solid var(--c-black); border-bottom: 3px solid var(--c-black);
+}
+.ticker-track {
+  display: flex; gap: 60px; animation: tickerMove 18s linear infinite; white-space: nowrap;
+}
+.ticker-item {
+  display: flex; align-items: center; gap: 20px;
+  font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700;
+  letter-spacing: 0.15em; text-transform: uppercase; color: var(--c-black); flex-shrink: 0;
+}
+.ticker-dot { width: 8px; height: 8px; background: var(--c-black); border-radius: 50%; flex-shrink: 0; }
+@keyframes tickerMove { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+.about { padding: 120px 0; max-width: 1400px; margin: 0 auto; padding-left: 60px; padding-right: 60px; }
+.about-header { display: grid; grid-template-columns: 1fr 2fr; gap: 80px; align-items: start; }
+.about-label {
+  font-family: 'Space Mono', monospace; font-size: 0.65rem; color: var(--c-red);
+  letter-spacing: 0.3em; text-transform: uppercase;
+  writing-mode: vertical-rl; transform: rotate(180deg); padding-top: 8px;
+}
+.about-content h2 {
+  font-family: 'Syne', sans-serif; font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 800; line-height: 1.05; letter-spacing: -0.03em;
+  text-transform: uppercase; margin-bottom: 32px;
+}
+.about-content h2 .highlight {
+  display: inline-block; background: var(--c-red); color: white;
+  padding: 0 12px; transform: rotate(-1deg); margin: 4px 0;
+}
+.about-content p { font-size: 1.1rem; line-height: 1.85; color: #444; max-width: 640px; margin-bottom: 20px; }
+
+.stats-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  border-top: 3px solid var(--c-black); border-left: 3px solid var(--c-black); margin-top: 80px;
+}
+.stat-box {
+  border-right: 3px solid var(--c-black); border-bottom: 3px solid var(--c-black);
+  padding: 40px 32px; position: relative; overflow: hidden; transition: background 0.3s;
+}
+.stat-box:nth-child(1) { --accent: var(--c-red); }
+.stat-box:nth-child(2) { --accent: var(--c-blue); }
+.stat-box:nth-child(3) { --accent: var(--c-green); }
+.stat-box:nth-child(4) { --accent: var(--c-orange); }
+.stat-box:hover { background: var(--accent); }
+.stat-box:hover .sb-num, .stat-box:hover .sb-label { color: white; }
+.stat-box::after {
+  content: ''; position: absolute; top: 0; left: 0;
+  width: 4px; height: 0; background: var(--accent); transition: height 0.4s;
+}
+.stat-box:hover::after { height: 100%; }
+.sb-num {
+  font-family: 'Playfair Display', serif; font-size: 4rem; font-weight: 900;
+  line-height: 1; color: var(--c-black); margin-bottom: 8px; transition: color 0.3s;
+}
+.sb-label {
+  font-family: 'Space Mono', monospace; font-size: 0.65rem; letter-spacing: 0.15em;
+  text-transform: uppercase; color: #777; transition: color 0.3s;
+}
+
+.sectors {
+  background: var(--c-black); padding: 120px 60px; position: relative; overflow: hidden;
+}
+.sectors::before {
+  content: 'EXHIBIT'; position: absolute;
+  font-family: 'Syne', sans-serif; font-size: 20vw; font-weight: 800;
+  color: rgba(255,255,255,0.02); top: 50%; left: 50%;
+  transform: translate(-50%,-50%); white-space: nowrap; pointer-events: none;
+}
+.sectors-inner { max-width: 1400px; margin: 0 auto; position: relative; z-index: 1; }
+.sectors-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 60px; }
+.sectors h2 {
+  font-family: 'Syne', sans-serif; font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 800; text-transform: uppercase; color: var(--c-white);
+  line-height: 1.05; letter-spacing: -0.03em;
+}
+.sectors-desc {
+  font-family: 'Space Mono', monospace; font-size: 0.75rem;
+  color: rgba(247,244,238,0.4); max-width: 300px; line-height: 1.7; text-align: right;
+}
+.sectors-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+.sector-item {
+  border: 1px solid rgba(255,255,255,0.06); padding: 36px 32px;
+  display: flex; align-items: center; gap: 24px;
+  transition: background 0.3s, border-color 0.3s; cursor: default; position: relative;
+}
+.sector-item:hover { background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.15); }
+.sector-icon { font-size: 2rem; flex-shrink: 0; }
+.sector-name {
+  font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 700;
+  color: var(--c-white); text-transform: uppercase;
+}
+.sector-sub {
+  font-family: 'Space Mono', monospace; font-size: 0.65rem;
+  color: rgba(247,244,238,0.35); margin-top: 4px;
+}
+.sector-num {
+  position: absolute; top: 16px; right: 20px;
+  font-family: 'Space Mono', monospace; font-size: 0.6rem; color: rgba(255,255,255,0.1);
+}
+
+.benefits {
+  padding: 120px 60px; max-width: 1400px; margin: 0 auto;
+}
+.benefits h2 {
+  font-family: 'Syne', sans-serif; font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800; text-transform: uppercase; letter-spacing: -0.03em;
+  margin-bottom: 16px; line-height: 1;
+}
+.benefits h2 em { font-style: normal; color: var(--c-red); }
+.benefits-sub {
+  font-family: 'Space Mono', monospace; font-size: 0.75rem;
+  color: #888; margin-bottom: 60px; letter-spacing: 0.05em;
+}
+.benefits-row { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; }
+.benefit-block {
+  padding: 40px; border: 2px solid var(--c-black); position: relative; transition: transform 0.3s;
+  background: var(--c-white); z-index: 0;
+}
+.benefit-block:hover { transform: translate(-4px, -4px); }
+.benefit-block::after {
+  content: ''; position: absolute; inset: 0; background: var(--c-black);
+  transform: translate(6px, 6px); z-index: -1; transition: transform 0.3s;
+}
+.benefit-block:hover::after { transform: translate(10px, 10px); }
+.bb-icon { font-size: 2.5rem; margin-bottom: 20px; display: block; }
+.bb-title {
+  font-family: 'Syne', sans-serif; font-size: 1.3rem; font-weight: 700;
+  text-transform: uppercase; margin-bottom: 12px;
+}
+.bb-desc { font-size: 0.9rem; line-height: 1.75; color: #555; }
+
+.timeline {
+  background: var(--c-yellow); padding: 100px 60px;
+  border-top: 3px solid var(--c-black); border-bottom: 3px solid var(--c-black);
+}
+.timeline-inner { max-width: 1400px; margin: 0 auto; }
+.timeline h2 {
+  font-family: 'Syne', sans-serif; font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800; text-transform: uppercase; letter-spacing: -0.03em;
+  margin-bottom: 60px; line-height: 1;
+}
+.timeline-track { display: flex; position: relative; }
+.timeline-track::before {
+  content: ''; position: absolute; top: 20px; left: 0; right: 0;
+  height: 3px; background: var(--c-black);
+}
+.timeline-step { flex: 1; padding-top: 52px; padding-right: 32px; position: relative; }
+.timeline-step::before {
+  content: ''; position: absolute; top: 11px; left: 0;
+  width: 20px; height: 20px; background: var(--c-black); border-radius: 50%; z-index: 1;
+}
+.ts-day {
+  font-family: 'Space Mono', monospace; font-size: 0.65rem; font-weight: 700;
+  letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 8px;
+}
+.ts-title {
+  font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 700;
+  text-transform: uppercase; margin-bottom: 8px;
+}
+.ts-desc { font-size: 0.8rem; line-height: 1.65; color: rgba(0,0,0,0.6); }
+
+.register {
+  background: var(--c-red); padding: 120px 60px; text-align: center;
+  position: relative; overflow: hidden;
+}
+.register::before {
+  content: '2026'; position: absolute;
+  font-family: 'Syne', sans-serif; font-size: 35vw; font-weight: 800;
+  color: rgba(0,0,0,0.08); top: 50%; left: 50%;
+  transform: translate(-50%,-50%); pointer-events: none; line-height: 1;
+}
+.register-inner { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+.register h2 {
+  font-family: 'Playfair Display', serif; font-style: italic;
+  font-size: clamp(3rem, 7vw, 6rem); font-weight: 900;
+  color: var(--c-white); line-height: 1.05; margin-bottom: 24px;
+}
+.register-sub {
+  font-family: 'Space Mono', monospace; font-size: 0.8rem;
+  color: rgba(247,244,238,0.7); letter-spacing: 0.05em; line-height: 1.8;
+  margin-bottom: 48px; max-width: 500px; margin-left: auto; margin-right: auto;
+}
+.btn-white {
+  background: var(--c-white); color: var(--c-red); padding: 18px 48px;
+  font-family: 'Syne', sans-serif; font-weight: 800; font-size: 0.9rem;
+  text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase;
+  display: inline-block; border: 2px solid var(--c-white); transition: background 0.25s, color 0.25s;
+}
+.btn-white:hover { background: transparent; color: var(--c-white); }
+
+footer {
+  background: var(--c-black); padding: 60px;
+  display: flex; justify-content: space-between; align-items: center;
+  border-top: 3px solid var(--c-yellow);
+}
+.footer-left {
+  font-family: 'Space Mono', monospace; font-size: 0.7rem;
+  color: rgba(247,244,238,0.3); letter-spacing: 0.1em;
+}
+.footer-logo {
+  font-family: 'Syne', sans-serif; font-size: 1.5rem; font-weight: 800;
+  color: var(--c-white); text-transform: uppercase; letter-spacing: -0.02em;
+}
+.footer-logo span { color: var(--c-yellow); }
+.footer-right { display: flex; gap: 32px; }
+.footer-right a {
+  font-family: 'Space Mono', monospace; font-size: 0.65rem;
+  color: rgba(247,244,238,0.4); letter-spacing: 0.1em;
+  text-decoration: none; text-transform: uppercase; transition: color 0.2s;
+}
+.footer-right a:hover { color: var(--c-yellow); }
+
+.fade-in { opacity: 0; transform: translateY(32px); transition: opacity 0.8s ease, transform 0.8s ease; }
+.fade-in.in { opacity: 1; transform: none; }
+.fade-in-2 { transition-delay: 0.15s; }
+.fade-in-3 { transition-delay: 0.3s; }
+.fade-in-4 { transition-delay: 0.45s; }
+
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero-right { display: none; }
+  .about-header { grid-template-columns: 1fr; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+  .sectors-list { grid-template-columns: 1fr; }
+  .benefits-row { grid-template-columns: 1fr; }
+  .timeline-track { flex-direction: column; gap: 40px; }
+  .timeline-track::before { display: none; }
+  footer { flex-direction: column; gap: 24px; text-align: center; }
+  nav { padding: 0 24px; }
+  .nav-items { display: none; }
+  .hero-left { padding: 80px 24px; }
+  .about { padding-left: 24px; padding-right: 24px; }
+  .sectors { padding: 80px 24px; }
+  .benefits { padding: 80px 24px; }
+  .timeline { padding: 80px 24px; }
+  .register { padding: 80px 24px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-brand">ITT EXPO <span>&middot;</span> DHAKA</div>
+  <ul class="nav-items">
+    <li><a href="#about">About</a></li>
+    <li><a href="#sectors">Sectors</a></li>
+    <li><a href="#schedule">Schedule</a></li>
+  </ul>
+  <a href="#register" class="nav-pill">Book a Stall</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-label">Dhaka &middot; August 2026</div>
+    <h1>
+      <div class="hero-title">International</div>
+      <div class="hero-title-block">Trade &<br>Tourism</div>
+      <div class="hero-title">Expo</div>
+    </h1>
+    <div class="hero-info">
+      <div class="hero-info-row"><span class="tag">DATE</span> 21st & 22nd August 2026</div>
+      <div class="hero-info-row"><span class="tag">VENUE</span> Aloki Convention Centre, Dhaka</div>
+      <div class="hero-info-row"><span class="tag">SCALE</span> 30+ International Pavilions &middot; 15,000+ Visitors</div>
+    </div>
+    <div class="hero-cta-row">
+      <a href="#register" class="btn-fill">Exhibit Now</a>
+      <a href="#about" class="btn-outline">Learn More</a>
+    </div>
+    <div class="hero-year">26</div>
+  </div>
+  <div class="hero-right">
+    <div class="panel panel-1" data-num="01"><div class="panel-icon">&#9992;&#65039;</div><span>Airlines</span></div>
+    <div class="panel panel-2" data-num="02"><div class="panel-icon">&#128444;</div><span>Pavilions</span></div>
+    <div class="panel panel-3" data-num="03"><div class="panel-icon">&#127976;</div><span>Hotels</span></div>
+    <div class="panel panel-4" data-num="04"><div class="panel-icon">&#127757;</div><span>Tourism Boards</span></div>
+    <div class="panel panel-5" data-num="05"><div class="panel-icon">&#129309;</div><span>Networking</span></div>
+    <div class="panel panel-6" data-num="06"><div class="panel-icon">&#128200;</div><span>Trade</span></div>
+  </div>
+</section>
+
+<div class="ticker">
+  <div class="ticker-track">
+    <div class="ticker-item"><div class="ticker-dot"></div>30+ International Pavilions</div>
+    <div class="ticker-item"><div class="ticker-dot"></div>15,000+ Visitors</div>
+    <div class="ticker-item"><div class="ticker-dot"></div>21 & 22 August 2026</div>
+    <div class="ticker-item"><div class="ticker-dot"></div>Aloki &middot; Dhaka</div>
+    <div class="ticker-item"><div class="ticker-dot"></div>Leading Airlines</div>
+    <div class="ticker-item"><div class="ticker-dot"></div>Hotel Chains</div>
+    <div class="ticker-item"><div class="ticker-dot"></div>Tourism Boards</div>
+    <div class="ticker-item"><div class="ticker-dot"></div>Global Networking</div>
+    <div class="ticker-item"><div class="ticker-dot"></div>30+ International Pavilions</div>
+    <div class="ticker-item"><div class="ticker-dot"></div>15,000+ Visitors</div>
+    <div class="ticker-item"><div class="ticker-dot"></div>21 & 22 August 2026</div>
+    <div class="ticker-item"><div class="ticker-dot"></div>Aloki &middot; Dhaka</div>
+    <div class="ticker-item"><div class="ticker-dot"></div>Leading Airlines</div>
+    <div class="ticker-item"><div class="ticker-dot"></div>Hotel Chains</div>
+    <div class="ticker-item"><div class="ticker-dot"></div>Tourism Boards</div>
+    <div class="ticker-item"><div class="ticker-dot"></div>Global Networking</div>
+  </div>
+</div>
+
+<section class="about" id="about">
+  <div class="about-header">
+    <div class="about-label">About the Event</div>
+    <div class="about-content">
+      <h2 class="fade-in">Bangladesh's <span class="highlight">Biggest</span><br>Tourism Gathering</h2>
+      <p class="fade-in fade-in-2">The International Trade & Tourism Expo 2026 is Dhaka's premier platform bringing together the world's most influential travel brands, tourism boards, airlines, hotel chains, and industry innovators for two extraordinary days of trade, networking, and discovery.</p>
+      <p class="fade-in fade-in-3">From package promotions to embassy partnerships, from B2B deal-making to consumer engagement &mdash; this expo is where the future of tourism in South Asia is written.</p>
+    </div>
+  </div>
+  <div class="stats-grid">
+    <div class="stat-box fade-in"><div class="sb-num">30+</div><div class="sb-label">International Pavilions</div></div>
+    <div class="stat-box fade-in fade-in-2"><div class="sb-num">15K</div><div class="sb-label">Visitors Expected</div></div>
+    <div class="stat-box fade-in fade-in-3"><div class="sb-num">2</div><div class="sb-label">Days of Business</div></div>
+    <div class="stat-box fade-in fade-in-4"><div class="sb-num">&infin;</div><div class="sb-label">Connections Made</div></div>
+  </div>
+</section>
+
+<section class="sectors" id="sectors">
+  <div class="sectors-inner">
+    <div class="sectors-header">
+      <h2 class="fade-in">Featured<br>Sectors</h2>
+      <p class="sectors-desc fade-in fade-in-2">Every corner of the global tourism industry, gathered under one roof in Dhaka.</p>
+    </div>
+    <div class="sectors-list">
+      <div class="sector-item fade-in"><div class="sector-icon">&#9992;&#65039;</div><div><div class="sector-name">Airlines & Aviation</div><div class="sector-sub">International & domestic carriers</div></div><div class="sector-num">01</div></div>
+      <div class="sector-item fade-in fade-in-2"><div class="sector-icon">&#127976;</div><div><div class="sector-name">Hotel Chains</div><div class="sector-sub">5-star, boutique, resorts</div></div><div class="sector-num">02</div></div>
+      <div class="sector-item fade-in fade-in-3"><div class="sector-icon">&#127757;</div><div><div class="sector-name">Tourism Boards</div><div class="sector-sub">National & regional bodies</div></div><div class="sector-num">03</div></div>
+      <div class="sector-item fade-in"><div class="sector-icon">&#127963;</div><div><div class="sector-name">Embassies & Consulates</div><div class="sector-sub">Diplomatic missions</div></div><div class="sector-num">04</div></div>
+      <div class="sector-item fade-in fade-in-2"><div class="sector-icon">&#128506;&#65039;</div><div><div class="sector-name">Travel Agencies</div><div class="sector-sub">Tour operators & OTAs</div></div><div class="sector-num">05</div></div>
+      <div class="sector-item fade-in fade-in-3"><div class="sector-icon">&#128188;</div><div><div class="sector-name">MICE & Events</div><div class="sector-sub">Meetings, incentives, conferences</div></div><div class="sector-num">06</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="benefits" id="exhibit">
+  <h2 class="fade-in">Why <em>Exhibit</em>?</h2>
+  <p class="benefits-sub fade-in fade-in-2">Everything your brand gains from two days at ITT Expo 2026</p>
+  <div class="benefits-row">
+    <div class="benefit-block fade-in">
+      <span class="bb-icon">&#128205;</span>
+      <div class="bb-title">Prime Exhibition Booth</div>
+      <div class="bb-desc">Secure a dedicated position in a high-traffic exhibition zone. First come, first served &mdash; early bookings get the best spots.</div>
+    </div>
+    <div class="benefit-block fade-in fade-in-2">
+      <span class="bb-icon">&#129309;</span>
+      <div class="bb-title">Direct Customer Engagement</div>
+      <div class="bb-desc">Meet qualified buyers, travel agents, corporate clients, and consumers who are actively seeking travel products and services.</div>
+    </div>
+    <div class="benefit-block fade-in fade-in-3">
+      <span class="bb-icon">&#127760;</span>
+      <div class="bb-title">Embassy & Investor Access</div>
+      <div class="bb-desc">Exclusive networking with embassies, diplomatic missions, and investors in the tourism and hospitality sectors.</div>
+    </div>
+    <div class="benefit-block fade-in fade-in-4">
+      <span class="bb-icon">&#128226;</span>
+      <div class="bb-title">Brand Promotion</div>
+      <div class="bb-desc">Showcase travel packages, services, and offers to 15,000+ visitors with unmatched exposure and media coverage.</div>
+    </div>
+  </div>
+</section>
+
+<section class="timeline" id="schedule">
+  <div class="timeline-inner">
+    <h2 class="fade-in">Event Schedule</h2>
+    <div class="timeline-track">
+      <div class="timeline-step fade-in">
+        <div class="ts-day">Day 01 &middot; 21 August</div>
+        <div class="ts-title">Grand Opening</div>
+        <div class="ts-desc">Inauguration ceremony, opening of international pavilions, networking breakfast, keynote addresses from industry leaders.</div>
+      </div>
+      <div class="timeline-step fade-in fade-in-2">
+        <div class="ts-day">Day 01 &middot; Afternoon</div>
+        <div class="ts-title">B2B Sessions</div>
+        <div class="ts-desc">Structured B2B meetings, panel discussions on South Asian tourism trends, one-on-one investor meetings.</div>
+      </div>
+      <div class="timeline-step fade-in fade-in-3">
+        <div class="ts-day">Day 02 &middot; 22 August</div>
+        <div class="ts-title">Consumer Day</div>
+        <div class="ts-desc">Open to the public &mdash; 15,000+ visitors explore pavilions, discover travel deals, and engage with exhibitors.</div>
+      </div>
+      <div class="timeline-step fade-in fade-in-4">
+        <div class="ts-day">Day 02 &middot; Evening</div>
+        <div class="ts-title">Closing Gala</div>
+        <div class="ts-desc">Closing ceremony, partnership announcements, networking gala dinner, and awards for outstanding exhibitors.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="register" id="register">
+  <div class="register-inner">
+    <h2 class="fade-in">Claim Your<br>Spot Now</h2>
+    <p class="register-sub fade-in fade-in-2">Limited exhibition stalls available. Contact our team today to discuss booth options, customized packages, and confirm your participation.</p>
+    <a href="mailto:contact@ittexpo.com" class="btn-white fade-in fade-in-3">Request a Stall Package</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-left">&copy; 2026 ITT Expo Dhaka. All rights reserved.</div>
+  <div class="footer-logo">ITT <span>EXPO</span> 2026</div>
+  <div class="footer-right">
+    <a href="#about">About</a>
+    <a href="#sectors">Sectors</a>
+    <a href="#register">Register</a>
+  </div>
+</footer>
+
+<script>
+  var els = document.querySelectorAll('.fade-in');
+  var obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) { if(e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  els.forEach(function(el) { obs.observe(el); });
+</script>
+<script src="js/design-toggle.js"></script>
+</body>
+</html>
