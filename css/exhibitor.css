@@ -588,6 +588,10 @@ body {
 }
 
 .ex-cta__actions {
+  display: flex;
+  gap: var(--space-sm);
+  justify-content: center;
+  flex-wrap: wrap;
   margin-bottom: var(--space-lg);
 }
 
@@ -598,6 +602,7 @@ body {
   gap: 0.75rem;
   font-size: 0.85rem;
   color: rgba(255, 255, 255, 0.4);
+  flex-wrap: wrap;
 }
 
 .ex-cta__contact a {
