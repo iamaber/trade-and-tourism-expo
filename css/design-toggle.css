@@ -4,151 +4,61 @@
   right: 24px;
   z-index: 9999;
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 8px;
+  align-items: center;
+  gap: 6px;
   font-family: 'DM Sans', system-ui, sans-serif;
 }
 
-.design-toggle__toggle-btn {
-  width: 48px;
-  height: 48px;
+.design-toggle__btn {
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  background: #0B1D3A;
-  border: 2px solid rgba(200, 151, 62, 0.6);
-  color: #C8973E;
-  font-size: 1.1rem;
+  background: rgba(11, 29, 58, 0.9);
+  border: 2px solid rgba(200, 151, 62, 0.3);
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.85rem;
+  font-weight: 700;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-  transition: all 0.3s ease;
+  transition: all 0.25s ease;
   font-family: 'DM Sans', system-ui, sans-serif;
   padding: 0;
-}
-
-.design-toggle__toggle-btn:hover {
-  background: #C8973E;
-  color: #0B1D3A;
-  transform: scale(1.1);
-  border-color: #C8973E;
-}
-
-.design-toggle__panel {
-  background: rgba(11, 29, 58, 0.97);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(200, 151, 62, 0.2);
-  border-radius: 12px;
-  padding: 16px;
-  min-width: 200px;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
-  opacity: 0;
-  transform: translateY(10px) scale(0.95);
-  pointer-events: none;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.design-toggle__panel.open {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-  pointer-events: all;
-}
-
-.design-toggle__panel-title {
-  font-size: 0.6rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.35);
-  margin-bottom: 12px;
-  font-weight: 600;
-}
-
-.design-toggle__options {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.design-toggle__option {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 10px 12px;
-  border-radius: 8px;
   text-decoration: none;
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 0.8rem;
-  font-weight: 500;
-  transition: all 0.2s ease;
-  cursor: pointer;
-  border: none;
-  background: none;
-  width: 100%;
-  text-align: left;
-  font-family: 'DM Sans', system-ui, sans-serif;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
-.design-toggle__option:hover {
-  background: rgba(255, 255, 255, 0.08);
-  color: #fff;
+.design-toggle__btn:hover {
+  border-color: var(--dt-accent, #C8973E);
+  color: var(--dt-accent, #C8973E);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
 }
 
-.design-toggle__option.active {
-  background: rgba(200, 151, 62, 0.15);
-  color: #C8973E;
-}
-
-.design-toggle__option-num {
-  width: 28px;
-  height: 28px;
-  border-radius: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.75rem;
-  font-weight: 700;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  flex-shrink: 0;
-  transition: all 0.2s ease;
-}
-
-.design-toggle__option.active .design-toggle__option-num {
-  background: #C8973E;
-  border-color: #C8973E;
+.design-toggle__btn.active {
+  background: var(--dt-accent, #C8973E);
+  border-color: var(--dt-accent, #C8973E);
   color: #0B1D3A;
+  box-shadow: 0 2px 12px rgba(200, 151, 62, 0.4);
 }
 
-.design-toggle__option:hover .design-toggle__option-num {
-  border-color: rgba(255, 255, 255, 0.3);
-}
-
-.design-toggle__option-info {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.design-toggle__option-name {
-  font-weight: 600;
-  font-size: 0.8rem;
-}
-
-.design-toggle__option-desc {
-  font-size: 0.6rem;
-  color: rgba(255, 255, 255, 0.3);
-  letter-spacing: 0.02em;
+.design-toggle__btn.active:hover {
+  transform: none;
+  box-shadow: 0 2px 12px rgba(200, 151, 62, 0.4);
 }
 
 @media (max-width: 768px) {
   .design-toggle {
     bottom: 16px;
     right: 16px;
+    gap: 4px;
   }
 
-  .design-toggle__panel {
-    min-width: 180px;
+  .design-toggle__btn {
+    width: 36px;
+    height: 36px;
+    font-size: 0.8rem;
   }
 }
