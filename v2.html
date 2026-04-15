@@ -3,547 +3,263 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ITT Expo 2026 — International Trade & Tourism Expo</title>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Playfair+Display:ital,wght@0,900;1,900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<title>ITT Expo 2026 — Discover the World with Business</title>
+<meta name="description" content="International Trade & Tourism Expo 2026. August 21-22, Aloki, Tejgaon, Dhaka. 40+ countries, 15,000+ visitors. Discover the World with Business.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Outfit:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/design-toggle.css">
 <style>
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-:root {
-  --c-red: #E83B2E;
-  --c-blue: #1B4FD8;
-  --c-green: #1BAD6A;
-  --c-orange: #F5820A;
-  --c-purple: #7B2FBE;
-  --c-teal: #0FB5BE;
-  --c-yellow: #F5C518;
-  --c-white: #F7F4EE;
-  --c-black: #0A0A0A;
-  --c-ink: #111111;
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+--bg:#0e0e0e;--bg-elevated:#1a1a1a;--bg-card:#222;
+--copper:#c8805a;--copper-light:#daa070;--copper-dim:rgba(200,128,90,0.15);
+--steel:#5b8db8;--steel-dim:rgba(91,141,184,0.12);
+--gold:#d4a84b;--gold-dim:rgba(212,168,75,0.12);
+--text:#eae8e4;--text-muted:#8a8884;--text-dim:#5a5854;
+--surface:#161616;--border:rgba(255,255,255,0.07);--border-light:rgba(255,255,255,0.12);
+--serif:'Abril Fatface',Georgia,serif;
+--sans:'Outfit',system-ui,sans-serif;
+--mono:'Space Mono',monospace;
+--max:1400px;--ease:cubic-bezier(0.16,1,0.3,1);
 }
-html { scroll-behavior: smooth; }
-body { background: var(--c-white); color: var(--c-ink); font-family: 'Syne', sans-serif; overflow-x: hidden; }
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:300;line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+ul,ol{list-style:none}
+::selection{background:var(--copper);color:var(--bg)}
 
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-  background: var(--c-black); padding: 0 48px; height: 64px;
-  display: flex; align-items: center; justify-content: space-between;
-  border-bottom: 3px solid var(--c-yellow);
-}
-.nav-brand { font-family: 'Space Mono', monospace; font-size: 0.85rem; color: var(--c-white); letter-spacing: 0.1em; }
-.nav-brand span { color: var(--c-yellow); }
-.nav-pill {
-  background: var(--c-yellow); color: var(--c-black); font-family: 'Space Mono', monospace;
-  font-size: 0.7rem; font-weight: 700; padding: 8px 20px; text-decoration: none;
-  letter-spacing: 0.1em; text-transform: uppercase; transition: background 0.2s, color 0.2s;
-  border: 2px solid var(--c-yellow);
-}
-.nav-pill:hover { background: transparent; color: var(--c-yellow); }
-.nav-items { display: flex; gap: 32px; list-style: none; }
-.nav-items a {
-  color: rgba(247,244,238,0.5); font-size: 0.75rem; letter-spacing: 0.1em;
-  text-decoration: none; text-transform: uppercase; transition: color 0.2s;
-}
-.nav-items a:hover { color: var(--c-white); }
+.wrap{width:min(calc(100% - 3rem),var(--max));margin:0 auto}
+.mono{font-family:var(--mono);letter-spacing:0.06em;text-transform:uppercase}
 
-.hero {
-  padding-top: 64px; min-height: 100vh;
-  display: grid; grid-template-columns: 1fr 1fr; position: relative; overflow: hidden;
-}
-.hero-left {
-  background: var(--c-black); padding: 80px 60px;
-  display: flex; flex-direction: column; justify-content: center;
-  position: relative; overflow: hidden;
-}
-.hero-label {
-  font-family: 'Space Mono', monospace; font-size: 0.65rem; color: var(--c-yellow);
-  letter-spacing: 0.3em; text-transform: uppercase; margin-bottom: 32px;
-  display: flex; align-items: center; gap: 12px;
-}
-.hero-label::before { content: ''; width: 24px; height: 2px; background: var(--c-yellow); }
-.hero-title {
-  font-family: 'Playfair Display', serif; font-style: italic;
-  font-size: clamp(3.5rem, 6vw, 6.5rem); font-weight: 900; color: var(--c-white);
-  line-height: 0.95; letter-spacing: -0.02em; margin-bottom: 12px;
-}
-.hero-title-block {
-  font-family: 'Syne', sans-serif; font-size: clamp(2.5rem, 5vw, 5rem);
-  font-weight: 800; color: var(--c-white); line-height: 1; letter-spacing: -0.03em; text-transform: uppercase;
-}
-.hero-year {
-  font-family: 'Space Mono', monospace; font-size: 8rem; color: rgba(245,197,24,0.08);
-  position: absolute; bottom: -20px; right: -20px; line-height: 1; pointer-events: none; font-weight: 700;
-}
-.hero-info { margin-top: 40px; display: flex; flex-direction: column; gap: 16px; }
-.hero-info-row {
-  display: flex; align-items: center; gap: 12px;
-  font-family: 'Space Mono', monospace; font-size: 0.75rem;
-  color: rgba(247,244,238,0.6); letter-spacing: 0.05em;
-}
-.hero-info-row .tag {
-  background: var(--c-yellow); color: var(--c-black); font-size: 0.6rem;
-  padding: 3px 8px; font-weight: 700; letter-spacing: 0.1em; flex-shrink: 0;
-}
-.hero-cta-row { margin-top: 48px; display: flex; gap: 16px; flex-wrap: wrap; }
-.btn-fill {
-  background: var(--c-red); color: var(--c-white); padding: 16px 36px;
-  font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.85rem;
-  text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase;
-  border: 2px solid var(--c-red); display: inline-block; position: relative; overflow: hidden;
-  transition: background 0.25s, color 0.25s;
-}
-.btn-fill::after {
-  content: ''; position: absolute; inset: 0; background: var(--c-white);
-  transform: translateX(-101%); transition: transform 0.3s cubic-bezier(0.16,1,0.3,1);
-}
-.btn-fill:hover::after { transform: translateX(0); }
-.btn-fill:hover { color: var(--c-red); }
-.btn-outline {
-  background: transparent; color: var(--c-white); padding: 16px 36px;
-  font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.85rem;
-  text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase;
-  border: 2px solid rgba(247,244,238,0.2); display: inline-block; transition: border-color 0.25s;
-}
-.btn-outline:hover { border-color: var(--c-white); }
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:72px;background:rgba(14,14,14,0.88);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.nav__brand img{height:44px;width:auto}
+.nav__links{display:flex;gap:2rem;align-items:center}
+.nav__links a{font-size:0.75rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);transition:color .3s ease}
+.nav__links a:hover{color:var(--copper)}
+.nav__cta{display:inline-flex;align-items:center;gap:0.5rem;padding:0.65rem 1.4rem;background:var(--copper);color:var(--bg);font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;transition:all .3s var(--ease)}
+.nav__cta:hover{background:var(--copper-light);transform:translateY(-2px);box-shadow:0 6px 24px rgba(200,128,90,0.3)}
 
-.hero-right { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr 1fr; }
-.panel {
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  gap: 8px; font-family: 'Space Mono', monospace; font-size: 0.6rem;
-  letter-spacing: 0.15em; text-transform: uppercase; font-weight: 700;
-  cursor: default; transition: filter 0.3s; position: relative; overflow: hidden;
-}
-.panel:hover { filter: brightness(1.15); }
-.panel .panel-icon { font-size: 2.5rem; transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1); }
-.panel:hover .panel-icon { transform: scale(1.2) rotate(-5deg); }
-.panel-1 { background: var(--c-blue); color: white; }
-.panel-2 { background: var(--c-red); color: white; grid-row: span 2; }
-.panel-3 { background: var(--c-green); color: white; }
-.panel-4 { background: var(--c-orange); color: white; }
-.panel-5 { background: var(--c-purple); color: white; }
-.panel-6 { background: var(--c-teal); color: white; }
-.panel::before {
-  content: attr(data-num); position: absolute;
-  font-family: 'Playfair Display', serif; font-size: 5rem;
-  opacity: 0.06; bottom: -10px; right: 5px; font-weight: 900; line-height: 1;
-}
+.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden}
+.hero__bg{position:absolute;inset:0;z-index:0}
+.hero__bg img{width:100%;height:100%;object-fit:cover;filter:brightness(0.35) saturate(0.8)}
+.hero__overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(14,14,14,0.3) 0%,rgba(14,14,14,0.1) 40%,rgba(14,14,14,0.85) 80%,rgba(14,14,14,1) 100%)}
+.hero__grain{position:absolute;inset:0;z-index:2;opacity:0.04;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")}
+.hero__content{position:relative;z-index:3;padding:0 3rem 5rem;max-width:var(--max);margin:0 auto;width:100%}
+.hero__tagline{font-family:var(--mono);font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--copper);margin-bottom:1.5rem;display:flex;align-items:center;gap:1rem}
+.hero__tagline::before{content:'';width:3rem;height:1px;background:var(--copper)}
+.hero__title{font-family:var(--serif);font-size:clamp(3.5rem,9vw,8.5rem);line-height:0.9;letter-spacing:-0.02em;color:var(--text);margin-bottom:1.5rem}
+.hero__title em{font-style:normal;color:var(--copper)}
+.hero__subtitle{max-width:480px;font-size:1.05rem;color:var(--text-muted);line-height:1.8;margin-bottom:2.5rem;font-weight:300}
+.hero__subtitle strong{color:var(--text);font-weight:500}
+.hero__bar{display:flex;gap:2.5rem;padding-top:2rem;border-top:1px solid var(--border-light);flex-wrap:wrap}
+.hero__stat{text-align:left}
+.hero__stat-num{font-family:var(--serif);font-size:2.8rem;line-height:1;color:var(--copper);display:block}
+.hero__stat-label{font-family:var(--mono);font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-muted);margin-top:0.4rem;display:block}
+.hero__letterbox-top,.hero__letterbox-bottom{position:absolute;left:0;right:0;height:clamp(2rem,4vh,4rem);background:var(--bg);z-index:4}
+.hero__letterbox-top{top:0}
+.hero__letterbox-bottom{bottom:0}
 
-.ticker {
-  background: var(--c-yellow); overflow: hidden; padding: 16px 0;
-  border-top: 3px solid var(--c-black); border-bottom: 3px solid var(--c-black);
-}
-.ticker-track {
-  display: flex; gap: 60px; animation: tickerMove 18s linear infinite; white-space: nowrap;
-}
-.ticker-item {
-  display: flex; align-items: center; gap: 20px;
-  font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 700;
-  letter-spacing: 0.15em; text-transform: uppercase; color: var(--c-black); flex-shrink: 0;
-}
-.ticker-dot { width: 8px; height: 8px; background: var(--c-black); border-radius: 50%; flex-shrink: 0; }
-@keyframes tickerMove { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.ticker{border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--surface);overflow:hidden}
+.ticker__track{display:flex;gap:3rem;padding:1.1rem 0;width:max-content;animation:tickerMove 30s linear infinite}
+.ticker__item{display:flex;align-items:center;gap:0.8rem;font-family:var(--mono);font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-muted);white-space:nowrap}
+.ticker__dot{width:6px;height:6px;background:var(--copper);flex-shrink:0;transform:rotate(45deg)}
+@keyframes tickerMove{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
-.about { padding: 120px 0; max-width: 1400px; margin: 0 auto; padding-left: 60px; padding-right: 60px; }
-.about-header { display: grid; grid-template-columns: 1fr 2fr; gap: 80px; align-items: start; }
-.about-label {
-  font-family: 'Space Mono', monospace; font-size: 0.65rem; color: var(--c-red);
-  letter-spacing: 0.3em; text-transform: uppercase;
-  writing-mode: vertical-rl; transform: rotate(180deg); padding-top: 8px;
-}
-.about-content h2 {
-  font-family: 'Syne', sans-serif; font-size: clamp(2.5rem, 5vw, 4.5rem);
-  font-weight: 800; line-height: 1.05; letter-spacing: -0.03em;
-  text-transform: uppercase; margin-bottom: 32px;
-}
-.about-content h2 .highlight {
-  display: inline-block; background: var(--c-red); color: white;
-  padding: 0 12px; transform: rotate(-1deg); margin: 4px 0;
-}
-.about-content p { font-size: 1.1rem; line-height: 1.85; color: #444; max-width: 640px; margin-bottom: 20px; }
+.about{padding:6rem 0}
+.about__grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.about__copy h2{font-family:var(--serif);font-size:clamp(2.5rem,5vw,4.5rem);line-height:0.95;margin-bottom:1.5rem}
+.about__copy h2 em{color:var(--copper);font-style:normal}
+.about__copy p{color:var(--text-muted);line-height:1.85;margin-bottom:1rem}
+.about__facts{display:grid;gap:0;border:1px solid var(--border-light);overflow:hidden}
+.about__fact{display:grid;grid-template-columns:9rem 1fr;gap:0;border-bottom:1px solid var(--border)}
+.about__fact:last-child{border-bottom:none}
+.about__fact-key{padding:1rem 1.2rem;font-family:var(--mono);font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-dim);background:var(--surface);display:flex;align-items:center}
+.about__fact-val{padding:1rem 1.2rem;font-weight:500;display:flex;align-items:center}
+.about__fact-val em{color:var(--copper);font-style:normal;font-family:var(--serif);font-size:1.1em}
 
-.stats-grid {
-  display: grid; grid-template-columns: repeat(4, 1fr);
-  border-top: 3px solid var(--c-black); border-left: 3px solid var(--c-black); margin-top: 80px;
-}
-.stat-box {
-  border-right: 3px solid var(--c-black); border-bottom: 3px solid var(--c-black);
-  padding: 40px 32px; position: relative; overflow: hidden; transition: background 0.3s;
-}
-.stat-box:nth-child(1) { --accent: var(--c-red); }
-.stat-box:nth-child(2) { --accent: var(--c-blue); }
-.stat-box:nth-child(3) { --accent: var(--c-green); }
-.stat-box:nth-child(4) { --accent: var(--c-orange); }
-.stat-box:hover { background: var(--accent); }
-.stat-box:hover .sb-num, .stat-box:hover .sb-label { color: white; }
-.stat-box::after {
-  content: ''; position: absolute; top: 0; left: 0;
-  width: 4px; height: 0; background: var(--accent); transition: height 0.4s;
-}
-.stat-box:hover::after { height: 100%; }
-.sb-num {
-  font-family: 'Playfair Display', serif; font-size: 4rem; font-weight: 900;
-  line-height: 1; color: var(--c-black); margin-bottom: 8px; transition: color 0.3s;
-}
-.sb-label {
-  font-family: 'Space Mono', monospace; font-size: 0.65rem; letter-spacing: 0.15em;
-  text-transform: uppercase; color: #777; transition: color 0.3s;
-}
+.zones{padding:6rem 0;background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.zones__header{margin-bottom:3rem}
+.zones__header h2{font-family:var(--serif);font-size:clamp(2.5rem,5vw,4.5rem);line-height:0.95}
+.zones__header h2 em{color:var(--copper);font-style:normal}
+.zone-rails{display:flex;flex-direction:column;gap:0}
+.zone-rail{display:grid;grid-template-columns:4.5rem 1.4fr 1fr auto;gap:1.5rem;align-items:center;padding:1.5rem 0;border-bottom:1px solid var(--border);transition:all .4s var(--ease);cursor:default}
+.zone-rail:hover{padding-left:1rem;background:rgba(200,128,90,0.03)}
+.zone-rail:hover .zone-rail__num{color:var(--copper)}
+.zone-rail__num{font-family:var(--serif);font-size:2.8rem;color:var(--text-dim);line-height:1;transition:color .3s ease}
+.zone-rail h3{font-size:1.15rem;font-weight:600;letter-spacing:-0.01em}
+.zone-rail p{color:var(--text-muted);font-size:0.9rem;line-height:1.6}
+.zone-rail__tag{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--steel);background:var(--steel-dim);padding:0.45rem 0.9rem;white-space:nowrap}
 
-.sectors {
-  background: var(--c-black); padding: 120px 60px; position: relative; overflow: hidden;
-}
-.sectors::before {
-  content: 'EXHIBIT'; position: absolute;
-  font-family: 'Syne', sans-serif; font-size: 20vw; font-weight: 800;
-  color: rgba(255,255,255,0.02); top: 50%; left: 50%;
-  transform: translate(-50%,-50%); white-space: nowrap; pointer-events: none;
-}
-.sectors-inner { max-width: 1400px; margin: 0 auto; position: relative; z-index: 1; }
-.sectors-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 60px; }
-.sectors h2 {
-  font-family: 'Syne', sans-serif; font-size: clamp(2rem, 4vw, 3.5rem);
-  font-weight: 800; text-transform: uppercase; color: var(--c-white);
-  line-height: 1.05; letter-spacing: -0.03em;
-}
-.sectors-desc {
-  font-family: 'Space Mono', monospace; font-size: 0.75rem;
-  color: rgba(247,244,238,0.4); max-width: 300px; line-height: 1.7; text-align: right;
-}
-.sectors-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
-.sector-item {
-  border: 1px solid rgba(255,255,255,0.06); padding: 36px 32px;
-  display: flex; align-items: center; gap: 24px;
-  transition: background 0.3s, border-color 0.3s; cursor: default; position: relative;
-}
-.sector-item:hover { background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.15); }
-.sector-icon { font-size: 2rem; flex-shrink: 0; }
-.sector-name {
-  font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 700;
-  color: var(--c-white); text-transform: uppercase;
-}
-.sector-sub {
-  font-family: 'Space Mono', monospace; font-size: 0.65rem;
-  color: rgba(247,244,238,0.35); margin-top: 4px;
-}
-.sector-num {
-  position: absolute; top: 16px; right: 20px;
-  font-family: 'Space Mono', monospace; font-size: 0.6rem; color: rgba(255,255,255,0.1);
+.schedule{padding:6rem 0;background:linear-gradient(180deg,var(--bg) 0%,#121218 50%,var(--bg) 100%)}
+.schedule__header{margin-bottom:3.5rem}
+.schedule__header h2{font-family:var(--serif);font-size:clamp(2.5rem,5vw,4.5rem);line-height:0.95}
+.schedule__header h2 em{color:var(--copper);font-style:normal}
+.schedule__days{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+.day{border-top:2px solid var(--copper)}
+.day__head{display:flex;justify-content:space-between;align-items:flex-end;padding:1.2rem 0 1.5rem;border-bottom:1px solid var(--border)}
+.day__num{font-family:var(--mono);font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--copper)}
+.day__title{font-family:var(--serif);font-size:1.6rem}
+.day__date{font-family:var(--mono);font-size:0.7rem;color:var(--text-dim)}
+.slot{display:grid;grid-template-columns:5.5rem 1fr;gap:1.2rem;padding:1.3rem 0;border-bottom:1px solid var(--border)}
+.slot__time{font-family:var(--mono);font-size:0.72rem;color:var(--copper);padding-top:0.2rem}
+.slot h4{font-size:0.95rem;font-weight:600;margin-bottom:0.3rem}
+.slot p{color:var(--text-muted);font-size:0.85rem;line-height:1.7}
+
+.cultural{padding:6rem 0}
+.cultural__header{margin-bottom:3rem}
+.cultural__header h2{font-family:var(--serif);font-size:clamp(2.5rem,5vw,4.5rem);line-height:0.95}
+.cultural__header h2 em{color:var(--copper);font-style:normal}
+.cultural__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.cultural__item{position:relative;overflow:hidden;aspect-ratio:4/3;cursor:pointer}
+.cultural__item:nth-child(1){aspect-ratio:3/4}
+.cultural__item:nth-child(5){grid-column:span 2;aspect-ratio:16/7}
+.cultural__item img{width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease),filter .5s ease;filter:brightness(0.75) saturate(0.85)}
+.cultural__item:hover img{transform:scale(1.08);filter:brightness(0.9) saturate(1)}
+.cultural__cap{position:absolute;bottom:0;left:0;right:0;z-index:1;padding:2.5rem 1.2rem 1rem;background:linear-gradient(0deg,rgba(14,14,14,0.92) 0%,transparent 100%)}
+.cultural__cap-name{font-family:var(--serif);font-size:1.1rem;display:block}
+.cultural__cap-origin{font-size:1.2rem}
+
+.countries{padding:5rem 0;background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.countries__header{margin-bottom:2.5rem}
+.countries__header h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3.5rem);line-height:0.95}
+.countries__header h2 em{color:var(--copper);font-style:normal}
+.countries__flags{display:flex;flex-wrap:wrap;gap:0.6rem;margin-bottom:2.5rem}
+.countries__flag{padding:0.5rem 1rem;border:1px solid var(--border-light);font-size:0.85rem;transition:all .3s ease;cursor:default}
+.countries__flag:hover{border-color:var(--copper);color:var(--copper);transform:translateY(-2px)}
+.countries__flag--more{color:var(--copper);border-color:var(--copper-dim);font-style:italic}
+.countries__pavilion{display:flex;gap:1.5rem;padding:1.8rem;border:1px solid var(--copper-dim);background:rgba(200,128,90,0.04);align-items:flex-start}
+.countries__pavilion-icon{font-size:2.2rem;flex-shrink:0}
+.countries__pavilion h3{font-family:var(--serif);font-size:1.4rem;color:var(--copper);margin-bottom:0.4rem}
+.countries__pavilion p{color:var(--text-muted);line-height:1.75;font-size:0.92rem}
+
+.guests{padding:6rem 0}
+.guests__header{margin-bottom:3rem}
+.guests__header h2{font-family:var(--serif);font-size:clamp(2.5rem,5vw,4.5rem);line-height:0.95}
+.guests__header h2 em{color:var(--copper);font-style:normal}
+.guests__cols{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.guests__col{border:1px solid var(--border);padding:1.8rem;transition:border-color .3s ease}
+.guests__col:hover{border-color:var(--copper)}
+.guests__col h3{font-family:var(--serif);font-size:1.2rem;margin-bottom:1rem;padding-bottom:0.8rem;border-bottom:1px solid var(--border);color:var(--text)}
+.guests__col li{padding:0.55rem 0;color:var(--text-muted);font-size:0.88rem;line-height:1.6;position:relative;padding-left:1rem}
+.guests__col li::before{content:'';position:absolute;left:0;top:0.85rem;width:4px;height:4px;border-radius:50%;background:var(--copper)}
+
+.specials{padding:6rem 0;background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.specials__header{margin-bottom:3rem}
+.specials__header h2{font-family:var(--serif);font-size:clamp(2.5rem,5vw,4.5rem);line-height:0.95}
+.specials__header h2 em{color:var(--copper);font-style:normal}
+.specials__items{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.special__card{padding:2rem;border:1px solid var(--border);transition:all .4s var(--ease);position:relative;overflow:hidden}
+.special__card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--copper);transform:scaleX(0);transition:transform .4s var(--ease);transform-origin:left}
+.special__card:hover::before{transform:scaleX(1)}
+.special__card:hover{border-color:var(--copper-dim);transform:translateY(-4px)}
+.special__icon{font-size:2rem;margin-bottom:1rem}
+.special__card h3{font-family:var(--serif);font-size:1.2rem;margin-bottom:0.5rem}
+.special__card p{color:var(--text-muted);font-size:0.9rem;line-height:1.7}
+
+.food{padding:6rem 0}
+.food__header{margin-bottom:3rem}
+.food__header h2{font-family:var(--serif);font-size:clamp(2.5rem,5vw,4.5rem);line-height:0.95}
+.food__header h2 em{color:var(--copper);font-style:normal}
+.food__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.food__item{position:relative;overflow:hidden}
+.food__item img{width:100%;aspect-ratio:4/3;object-fit:cover;filter:brightness(0.8);transition:all .5s var(--ease)}
+.food__item:hover img{filter:brightness(0.95);transform:scale(1.04)}
+.food__info{padding:1rem 0}
+.food__info h3{font-family:var(--serif);font-size:1.2rem;margin-bottom:0.3rem}
+.food__info p{color:var(--text-muted);font-size:0.88rem;line-height:1.65}
+
+.cta{padding:5rem 0;position:relative;overflow:hidden}
+.cta__bg{position:absolute;inset:0;background:linear-gradient(135deg,#2a1810 0%,#1a1210 40%,#10141a 100%)}
+.cta__grain{position:absolute;inset:0;opacity:0.06;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")}
+.cta__inner{position:relative;z-index:1;display:grid;grid-template-columns:1.15fr 0.85fr;gap:3rem;align-items:center}
+.cta__copy h2{font-family:var(--serif);font-size:clamp(2.5rem,6vw,5.5rem);line-height:0.9;margin-bottom:1rem}
+.cta__copy h2 em{color:var(--copper);font-style:normal}
+.cta__copy p{color:var(--text-muted);line-height:1.85;max-width:34rem;margin-bottom:2rem}
+.cta__actions{display:flex;gap:1rem;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:3.2rem;padding:0 1.6rem;font-family:var(--sans);font-size:0.78rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;border:none;cursor:pointer;transition:all .35s var(--ease)}
+.btn--copper{background:var(--copper);color:var(--bg)}
+.btn--copper:hover{background:var(--copper-light);transform:translateY(-2px);box-shadow:0 6px 28px rgba(200,128,90,0.35)}
+.btn--outline{border:1px solid rgba(255,255,255,0.2);color:var(--text);background:transparent}
+.btn--outline:hover{border-color:var(--copper);color:var(--copper)}
+.cta__contact{display:grid;gap:1.5rem;padding-left:2.5rem;border-left:1px solid rgba(255,255,255,0.1)}
+.cta__contact-block strong{display:block;font-family:var(--serif);font-size:1.2rem;margin-bottom:0.3rem}
+.cta__contact-block p,.cta__contact-block a{color:var(--text-muted);line-height:1.8;font-size:0.9rem}
+.cta__contact-block a:hover{color:var(--copper)}
+
+.footer{padding:2rem 0;border-top:1px solid var(--border)}
+.footer__inner{display:flex;justify-content:space-between;align-items:center;gap:1.5rem;flex-wrap:wrap}
+.footer__left{display:flex;align-items:center;gap:1.2rem}
+.footer__left img{height:38px;width:auto}
+.footer__orgs{display:flex;align-items:center;gap:0.8rem}
+.footer__orgs img{height:24px;width:auto;opacity:0.5;transition:opacity .3s ease}
+.footer__orgs img:hover{opacity:0.9}
+.footer__copy{color:var(--text-dim);font-size:0.78rem;line-height:1.7}
+.footer__links{display:flex;gap:1.5rem}
+.footer__links a{font-size:0.75rem;color:var(--text-muted);transition:color .3s ease}
+.footer__links a:hover{color:var(--copper)}
+
+.reveal{opacity:0;transform:translateY(32px);transition:opacity .85s var(--ease),transform .85s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
+
+@media(max-width:1024px){
+.hero__content{padding:0 1.5rem 4rem}
+.about__grid,.cta__inner{grid-template-columns:1fr}
+.schedule__days{grid-template-columns:1fr}
+.cultural__grid{grid-template-columns:repeat(2,1fr)}
+.cultural__item:nth-child(5){grid-column:span 1}
+.guests__cols{grid-template-columns:1fr}
+.specials__items{grid-template-columns:1fr}
+.food__grid{grid-template-columns:1fr}
+.nav__links{display:none}
 }
 
-.benefits {
-  padding: 120px 60px; max-width: 1400px; margin: 0 auto;
+@media(max-width:768px){
+.hero__title{font-size:clamp(2.5rem,8vw,4.5rem)}
+.hero__bar{gap:1.5rem}
+.hero__stat-num{font-size:2rem}
+.cultural__grid{grid-template-columns:1fr}
+.zone-rail{grid-template-columns:3rem 1fr;gap:0.8rem}
+.zone-rail p,.zone-rail__tag{display:none}
+.nav{padding:0 1.2rem}
+.hero__content{padding:0 1rem 3rem}
+.footer__inner{flex-direction:column;align-items:flex-start}
+.cta__contact{border-left:0;padding-left:0;border-top:1px solid rgba(255,255,255,0.1);padding-top:1.5rem}
 }
-.benefits h2 {
-  font-family: 'Syne', sans-serif; font-size: clamp(2.5rem, 5vw, 4rem);
-  font-weight: 800; text-transform: uppercase; letter-spacing: -0.03em;
-  margin-bottom: 16px; line-height: 1;
-}
-.benefits h2 em { font-style: normal; color: var(--c-red); }
-.benefits-sub {
-  font-family: 'Space Mono', monospace; font-size: 0.75rem;
-  color: #888; margin-bottom: 60px; letter-spacing: 0.05em;
-}
-.benefits-row { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; }
-.benefit-block {
-  padding: 40px; border: 2px solid var(--c-black); position: relative; transition: transform 0.3s;
-  background: var(--c-white); z-index: 0;
-}
-.benefit-block:hover { transform: translate(-4px, -4px); }
-.benefit-block::after {
-  content: ''; position: absolute; inset: 0; background: var(--c-black);
-  transform: translate(6px, 6px); z-index: -1; transition: transform 0.3s;
-}
-.benefit-block:hover::after { transform: translate(10px, 10px); }
-.bb-icon { font-size: 2.5rem; margin-bottom: 20px; display: block; }
-.bb-title {
-  font-family: 'Syne', sans-serif; font-size: 1.3rem; font-weight: 700;
-  text-transform: uppercase; margin-bottom: 12px;
-}
-.bb-desc { font-size: 0.9rem; line-height: 1.75; color: #555; }
 
-.timeline {
-  background: var(--c-yellow); padding: 100px 60px;
-  border-top: 3px solid var(--c-black); border-bottom: 3px solid var(--c-black);
-}
-.timeline-inner { max-width: 1400px; margin: 0 auto; }
-.timeline h2 {
-  font-family: 'Syne', sans-serif; font-size: clamp(2.5rem, 5vw, 4rem);
-  font-weight: 800; text-transform: uppercase; letter-spacing: -0.03em;
-  margin-bottom: 60px; line-height: 1;
-}
-.timeline-track { display: flex; position: relative; }
-.timeline-track::before {
-  content: ''; position: absolute; top: 20px; left: 0; right: 0;
-  height: 3px; background: var(--c-black);
-}
-.timeline-step { flex: 1; padding-top: 52px; padding-right: 32px; position: relative; }
-.timeline-step::before {
-  content: ''; position: absolute; top: 11px; left: 0;
-  width: 20px; height: 20px; background: var(--c-black); border-radius: 50%; z-index: 1;
-}
-.ts-day {
-  font-family: 'Space Mono', monospace; font-size: 0.65rem; font-weight: 700;
-  letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 8px;
-}
-.ts-title {
-  font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 700;
-  text-transform: uppercase; margin-bottom: 8px;
-}
-.ts-desc { font-size: 0.8rem; line-height: 1.65; color: rgba(0,0,0,0.6); }
-
-.register {
-  background: var(--c-red); padding: 120px 60px; text-align: center;
-  position: relative; overflow: hidden;
-}
-.register::before {
-  content: '2026'; position: absolute;
-  font-family: 'Syne', sans-serif; font-size: 35vw; font-weight: 800;
-  color: rgba(0,0,0,0.08); top: 50%; left: 50%;
-  transform: translate(-50%,-50%); pointer-events: none; line-height: 1;
-}
-.register-inner { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
-.register h2 {
-  font-family: 'Playfair Display', serif; font-style: italic;
-  font-size: clamp(3rem, 7vw, 6rem); font-weight: 900;
-  color: var(--c-white); line-height: 1.05; margin-bottom: 24px;
-}
-.register-sub {
-  font-family: 'Space Mono', monospace; font-size: 0.8rem;
-  color: rgba(247,244,238,0.7); letter-spacing: 0.05em; line-height: 1.8;
-  margin-bottom: 48px; max-width: 500px; margin-left: auto; margin-right: auto;
-}
-.btn-white {
-  background: var(--c-white); color: var(--c-red); padding: 18px 48px;
-  font-family: 'Syne', sans-serif; font-weight: 800; font-size: 0.9rem;
-  text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase;
-  display: inline-block; border: 2px solid var(--c-white); transition: background 0.25s, color 0.25s;
-}
-.btn-white:hover { background: transparent; color: var(--c-white); }
-
-footer {
-  background: var(--c-black); padding: 60px;
-  display: flex; justify-content: space-between; align-items: center;
-  border-top: 3px solid var(--c-yellow);
-}
-.footer-left {
-  font-family: 'Space Mono', monospace; font-size: 0.7rem;
-  color: rgba(247,244,238,0.3); letter-spacing: 0.1em;
-}
-.footer-logo {
-  font-family: 'Syne', sans-serif; font-size: 1.5rem; font-weight: 800;
-  color: var(--c-white); text-transform: uppercase; letter-spacing: -0.02em;
-}
-.footer-logo span { color: var(--c-yellow); }
-.footer-right { display: flex; gap: 32px; }
-.footer-right a {
-  font-family: 'Space Mono', monospace; font-size: 0.65rem;
-  color: rgba(247,244,238,0.4); letter-spacing: 0.1em;
-  text-decoration: none; text-transform: uppercase; transition: color 0.2s;
-}
-.footer-right a:hover { color: var(--c-yellow); }
-
-.fade-in { opacity: 0; transform: translateY(32px); transition: opacity 0.8s ease, transform 0.8s ease; }
-.fade-in.in { opacity: 1; transform: none; }
-.fade-in-2 { transition-delay: 0.15s; }
-.fade-in-3 { transition-delay: 0.3s; }
-.fade-in-4 { transition-delay: 0.45s; }
-
-@media (max-width: 900px) {
-  .hero { grid-template-columns: 1fr; }
-  .hero-right { display: none; }
-  .about-header { grid-template-columns: 1fr; }
-  .stats-grid { grid-template-columns: 1fr 1fr; }
-  .sectors-list { grid-template-columns: 1fr; }
-  .benefits-row { grid-template-columns: 1fr; }
-  .timeline-track { flex-direction: column; gap: 40px; }
-  .timeline-track::before { display: none; }
-  footer { flex-direction: column; gap: 24px; text-align: center; }
-  nav { padding: 0 24px; }
-  .nav-items { display: none; }
-  .hero-left { padding: 80px 24px; }
-  .about { padding-left: 24px; padding-right: 24px; }
-  .sectors { padding: 80px 24px; }
-  .benefits { padding: 80px 24px; }
-  .timeline { padding: 80px 24px; }
-  .register { padding: 80px 24px; }
+@media(prefers-reduced-motion:reduce){
+html{scroll-behavior:auto}
+*,*::before,*::after{animation:none!important;transition-duration:.01ms!important}
+.reveal{opacity:1;transform:none}
 }
 </style>
 </head>
 <body>
 
-<nav>
-  <div class="nav-brand">ITT EXPO <span>&middot;</span> DHAKA</div>
-  <ul class="nav-items">
-    <li><a href="#about">About</a></li>
-    <li><a href="#sectors">Sectors</a></li>
-    <li><a href="#schedule">Schedule</a></li>
-  </ul>
-  <a href="#register" class="nav-pill">Book a Stall</a>
-</nav>
-
-<section class="hero">
-  <div class="hero-left">
-    <div class="hero-label">Dhaka &middot; August 2026</div>
-    <h1>
-      <div class="hero-title">International</div>
-      <div class="hero-title-block">Trade &<br>Tourism</div>
-      <div class="hero-title">Expo</div>
-    </h1>
-    <div class="hero-info">
-      <div class="hero-info-row"><span class="tag">DATE</span> 21st & 22nd August 2026</div>
-      <div class="hero-info-row"><span class="tag">VENUE</span> Aloki Convention Centre, Dhaka</div>
-      <div class="hero-info-row"><span class="tag">SCALE</span> 30+ International Pavilions &middot; 15,000+ Visitors</div>
-    </div>
-    <div class="hero-cta-row">
-      <a href="#register" class="btn-fill">Exhibit Now</a>
-      <a href="#about" class="btn-outline">Learn More</a>
-    </div>
-    <div class="hero-year">26</div>
-  </div>
-  <div class="hero-right">
-    <div class="panel panel-1" data-num="01"><div class="panel-icon">&#9992;&#65039;</div><span>Airlines</span></div>
-    <div class="panel panel-2" data-num="02"><div class="panel-icon">&#128444;</div><span>Pavilions</span></div>
-    <div class="panel panel-3" data-num="03"><div class="panel-icon">&#127976;</div><span>Hotels</span></div>
-    <div class="panel panel-4" data-num="04"><div class="panel-icon">&#127757;</div><span>Tourism Boards</span></div>
-    <div class="panel panel-5" data-num="05"><div class="panel-icon">&#129309;</div><span>Networking</span></div>
-    <div class="panel panel-6" data-num="06"><div class="panel-icon">&#128200;</div><span>Trade</span></div>
-  </div>
-</section>
-
-<div class="ticker">
-  <div class="ticker-track">
-    <div class="ticker-item"><div class="ticker-dot"></div>30+ International Pavilions</div>
-    <div class="ticker-item"><div class="ticker-dot"></div>15,000+ Visitors</div>
-    <div class="ticker-item"><div class="ticker-dot"></div>21 & 22 August 2026</div>
-    <div class="ticker-item"><div class="ticker-dot"></div>Aloki &middot; Dhaka</div>
-    <div class="ticker-item"><div class="ticker-dot"></div>Leading Airlines</div>
-    <div class="ticker-item"><div class="ticker-dot"></div>Hotel Chains</div>
-    <div class="ticker-item"><div class="ticker-dot"></div>Tourism Boards</div>
-    <div class="ticker-item"><div class="ticker-dot"></div>Global Networking</div>
-    <div class="ticker-item"><div class="ticker-dot"></div>30+ International Pavilions</div>
-    <div class="ticker-item"><div class="ticker-dot"></div>15,000+ Visitors</div>
-    <div class="ticker-item"><div class="ticker-dot"></div>21 & 22 August 2026</div>
-    <div class="ticker-item"><div class="ticker-dot"></div>Aloki &middot; Dhaka</div>
-    <div class="ticker-item"><div class="ticker-dot"></div>Leading Airlines</div>
-    <div class="ticker-item"><div class="ticker-dot"></div>Hotel Chains</div>
-    <div class="ticker-item"><div class="ticker-dot"></div>Tourism Boards</div>
-    <div class="ticker-item"><div class="ticker-dot"></div>Global Networking</div>
-  </div>
-</div>
-
-<section class="about" id="about">
-  <div class="about-header">
-    <div class="about-label">About the Event</div>
-    <div class="about-content">
-      <h2 class="fade-in">Bangladesh's <span class="highlight">Biggest</span><br>Tourism Gathering</h2>
-      <p class="fade-in fade-in-2">The International Trade & Tourism Expo 2026 is Dhaka's premier platform bringing together the world's most influential travel brands, tourism boards, airlines, hotel chains, and industry innovators for two extraordinary days of trade, networking, and discovery.</p>
-      <p class="fade-in fade-in-3">From package promotions to embassy partnerships, from B2B deal-making to consumer engagement &mdash; this expo is where the future of tourism in South Asia is written.</p>
-    </div>
-  </div>
-  <div class="stats-grid">
-    <div class="stat-box fade-in"><div class="sb-num">30+</div><div class="sb-label">International Pavilions</div></div>
-    <div class="stat-box fade-in fade-in-2"><div class="sb-num">15K</div><div class="sb-label">Visitors Expected</div></div>
-    <div class="stat-box fade-in fade-in-3"><div class="sb-num">2</div><div class="sb-label">Days of Business</div></div>
-    <div class="stat-box fade-in fade-in-4"><div class="sb-num">&infin;</div><div class="sb-label">Connections Made</div></div>
-  </div>
-</section>
-
-<section class="sectors" id="sectors">
-  <div class="sectors-inner">
-    <div class="sectors-header">
-      <h2 class="fade-in">Featured<br>Sectors</h2>
-      <p class="sectors-desc fade-in fade-in-2">Every corner of the global tourism industry, gathered under one roof in Dhaka.</p>
-    </div>
-    <div class="sectors-list">
-      <div class="sector-item fade-in"><div class="sector-icon">&#9992;&#65039;</div><div><div class="sector-name">Airlines & Aviation</div><div class="sector-sub">International & domestic carriers</div></div><div class="sector-num">01</div></div>
-      <div class="sector-item fade-in fade-in-2"><div class="sector-icon">&#127976;</div><div><div class="sector-name">Hotel Chains</div><div class="sector-sub">5-star, boutique, resorts</div></div><div class="sector-num">02</div></div>
-      <div class="sector-item fade-in fade-in-3"><div class="sector-icon">&#127757;</div><div><div class="sector-name">Tourism Boards</div><div class="sector-sub">National & regional bodies</div></div><div class="sector-num">03</div></div>
-      <div class="sector-item fade-in"><div class="sector-icon">&#127963;</div><div><div class="sector-name">Embassies & Consulates</div><div class="sector-sub">Diplomatic missions</div></div><div class="sector-num">04</div></div>
-      <div class="sector-item fade-in fade-in-2"><div class="sector-icon">&#128506;&#65039;</div><div><div class="sector-name">Travel Agencies</div><div class="sector-sub">Tour operators & OTAs</div></div><div class="sector-num">05</div></div>
-      <div class="sector-item fade-in fade-in-3"><div class="sector-icon">&#128188;</div><div><div class="sector-name">MICE & Events</div><div class="sector-sub">Meetings, incentives, conferences</div></div><div class="sector-num">06</div></div>
-    </div>
-  </div>
-</section>
-
-<section class="benefits" id="exhibit">
-  <h2 class="fade-in">Why <em>Exhibit</em>?</h2>
-  <p class="benefits-sub fade-in fade-in-2">Everything your brand gains from two days at ITT Expo 2026</p>
-  <div class="benefits-row">
-    <div class="benefit-block fade-in">
-      <span class="bb-icon">&#128205;</span>
-      <div class="bb-title">Prime Exhibition Booth</div>
-      <div class="bb-desc">Secure a dedicated position in a high-traffic exhibition zone. First come, first served &mdash; early bookings get the best spots.</div>
-    </div>
-    <div class="benefit-block fade-in fade-in-2">
-      <span class="bb-icon">&#129309;</span>
-      <div class="bb-title">Direct Customer Engagement</div>
-      <div class="bb-desc">Meet qualified buyers, travel agents, corporate clients, and consumers who are actively seeking travel products and services.</div>
-    </div>
-    <div class="benefit-block fade-in fade-in-3">
-      <span class="bb-icon">&#127760;</span>
-      <div class="bb-title">Embassy & Investor Access</div>
-      <div class="bb-desc">Exclusive networking with embassies, diplomatic missions, and investors in the tourism and hospitality sectors.</div>
-    </div>
-    <div class="benefit-block fade-in fade-in-4">
-      <span class="bb-icon">&#128226;</span>
-      <div class="bb-title">Brand Promotion</div>
-      <div class="bb-desc">Showcase travel packages, services, and offers to 15,000+ visitors with unmatched exposure and media coverage.</div>
-    </div>
-  </div>
-</section>
-
-<section class="timeline" id="schedule">
-  <div class="timeline-inner">
-    <h2 class="fade-in">Event Schedule</h2>
-    <div class="timeline-track">
-      <div class="timeline-step fade-in">
-        <div class="ts-day">Day 01 &middot; 21 August</div>
-        <div class="ts-title">Grand Opening</div>
-        <div class="ts-desc">Inauguration ceremony, opening of international pavilions, networking breakfast, keynote addresses from industry leaders.</div>
-      </div>
-      <div class="timeline-step fade-in fade-in-2">
-        <div class="ts-day">Day 01 &middot; Afternoon</div>
-        <div class="ts-title">B2B Sessions</div>
-        <div class="ts-desc">Structured B2B meetings, panel discussions on South Asian tourism trends, one-on-one investor meetings.</div>
-      </div>
-      <div class="timeline-step fade-in fade-in-3">
-        <div class="ts-day">Day 02 &middot; 22 August</div>
-        <div class="ts-title">Consumer Day</div>
-        <div class="ts-desc">Open to the public &mdash; 15,000+ visitors explore pavilions, discover travel deals, and engage with exhibitors.</div>
-      </div>
-      <div class="timeline-step fade-in fade-in-4">
-        <div class="ts-day">Day 02 &middot; Evening</div>
-        <div class="ts-title">Closing Gala</div>
-        <div class="ts-desc">Closing ceremony, partnership announcements, networking gala dinner, and awards for outstanding exhibitors.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="register" id="register">
-  <div class="register-inner">
-    <h2 class="fade-in">Claim Your<br>Spot Now</h2>
-    <p class="register-sub fade-in fade-in-2">Limited exhibition stalls available. Contact our team today to discuss booth options, customized packages, and confirm your participation.</p>
-    <a href="mailto:contact@ittexpo.com" class="btn-white fade-in fade-in-3">Request a Stall Package</a>
-  </div>
-</section>
-
-<footer>
-  <div class="footer-left">&copy; 2026 ITT Expo Dhaka. All rights reserved.</div>
-  <div class="footer-logo">ITT <span>EXPO</span> 2026</div>
-  <div class="footer-right">
+<nav class="nav">
+  <a href="index.html" class="nav__brand"><img src="assets/img/logo-dark.png" alt="ITT Expo 2026"></a>
+  <div class="nav__links">
     <a href="#about">About</a>
-    <a href="#sectors">Sectors</a>
+    <a href="#zones">Zones</a>
+    <a href="#schedule">Schedule</a>
+    <a href="#cultural">Culture</a>
     <a href="#register">Register</a>
   </div>
-</footer>
+  <a href="#register" class="nav__cta mono">Book Presence</a>
+</nav>
 
-<script>
-  var els = document.querySelectorAll('.fade-in');
-  var obs = new IntersectionObserver(function(entries) {
-    entries.forEach(function(e) { if(e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
-  }, { threshold: 0.1 });
-  els.forEach(function(el) { obs.observe(el); });
-</script>
-<script src="js/design-toggle.js"></script>
-</body>
-</html>
+<main>
+  <section class="hero">
+    <div class="hero__bg">
+      <picture><source srcset="assets/img/hero-main.webp" type="image/webp"><img src="assets/img/hero-main.png" alt="ITT Expo 2026" loading="eager"></picture>
+    </div>
+    <div class="hero__overlay"></div>
+    <div class="hero__grain"></div>
+    <div class="hero__letterbox-top"></div>
+    <div class="hero__content">
+      <div class="hero__tagline reveal">Discover the World with Business</div>
+      <h1 class="hero__title reveal d1">International<br>Trade &amp; <em>Tourism</em><br>Expo 2026</h1>
+      <p class="hero__subtitle reveal d2">South Asia's most anticipated international event. <strong>40+ countries, 15,000+ visitors,</strong> and the biggest names in travel and hospitality converge on Dhaka for two extraordinary days.</p>
+      <div class="hero__bar reveal d3">
