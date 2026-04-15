@@ -14,21 +14,22 @@
   <nav class="nav">
     <div class="nav__inner">
       <a href="index.html" class="nav__logo">
-        <span class="nav__logo-icon">IT</span>
-        ITT Expo
+        <picture><source srcset="assets/img/logo-dark.webp" type="image/webp"><img src="assets/img/logo-dark.png" alt="ITT Expo 2026" class="nav__logo-img" loading="eager" decoding="async"></picture>
       </a>
-      <div class="nav__links">
+      <div class="nav__links" id="site-menu">
         <a href="index.html" class="nav__link">Event</a>
         <a href="sponsor.html" class="nav__link active">Sponsors</a>
         <a href="exhibitor.html" class="nav__link">Exhibitors</a>
         <a href="index.html#contact" class="nav__link">Contact</a>
         <a href="#partner" class="nav__cta">Become a Partner</a>
       </div>
-      <div class="nav__mobile-toggle">
-        <span></span><span></span><span></span>
-      </div>
+      <button class="nav__mobile-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Toggle navigation">
+        <span class="nav__mobile-bar"></span><span class="nav__mobile-bar"></span><span class="nav__mobile-bar"></span>
+        <span class="sr-only">Menu</span>
+      </button>
     </div>
   </nav>
+  <div class="nav__scrim" hidden></div>
 
   <main>
     <section class="sp-hero">
@@ -53,9 +54,21 @@
         <div class="sp-hero__meta reveal delay-3">
           <span>August 21-22, 2026</span>
           <span class="sp-hero__meta-dot"></span>
-          <span>Aloki, Dhaka</span>
+          <span>Aloki, Tejgaon, Dhaka</span>
           <span class="sp-hero__meta-dot"></span>
           <span>40+ Countries</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-jump page-jump--sponsor">
+      <div class="container">
+        <div class="page-jump__inner reveal">
+          <span class="page-jump__label">Quick Route</span>
+          <a href="#benefits" class="page-jump__link">Brand Benefits</a>
+          <a href="#tiers" class="page-jump__link">Sponsor Tiers</a>
+          <a href="#visibility" class="page-jump__link">Audience Reach</a>
+          <a href="info/International%20Trade%20%26%20Tourism%20Fair%202026.pptx" class="page-jump__link" download>Event Deck</a>
         </div>
       </div>
     </section>
@@ -89,7 +102,7 @@
       </div>
     </section>
 
-    <section class="sp-benefits">
+    <section class="sp-benefits" id="benefits">
       <div class="container">
         <div class="sp-benefits__header">
           <div class="section-label reveal">Why Partner With Us</div>
@@ -155,7 +168,7 @@
       </div>
     </section>
 
-    <section class="sp-tiers">
+    <section class="sp-tiers" id="tiers">
       <div class="container">
         <div class="sp-tiers__header">
           <div class="section-label reveal" style="justify-content:center">Partnership Tiers</div>
@@ -168,145 +181,8 @@
             <h3>Title Sponsor</h3>
             <div class="sp-tier__bar"><div class="sp-tier__bar-fill"></div></div>
             <ul class="sp-tier__perks">
-              <li>Exclusive naming rights to the event</li>
-              <li>Largest logo placement on all materials</li>
-              <li>Keynote speaking slot at conference</li>
-              <li>Premium booth in highest-traffic zone</li>
-              <li>Full social media & press integration</li>
-            </ul>
-          </div>
-
-          <div class="sp-tier reveal delay-1" style="--tier-color: #DEB368; --tier-width: 80%;">
-            <h3>Powered By Sponsor</h3>
-            <div class="sp-tier__bar"><div class="sp-tier__bar-fill"></div></div>
-            <ul class="sp-tier__perks">
-              <li>Co-branding on select event assets</li>
-              <li>Large booth in premium zone</li>
-              <li>Conference panel participation</li>
-              <li>Dedicated social media campaign</li>
-              <li>VIP networking access</li>
-            </ul>
-          </div>
-
-          <div class="sp-tier reveal delay-2" style="--tier-color: #1A9BAA; --tier-width: 60%;">
-            <h3>Co-Sponsor</h3>
-            <div class="sp-tier__bar"><div class="sp-tier__bar-fill"></div></div>
-            <ul class="sp-tier__perks">
-              <li>Logo placement on event materials</li>
-              <li>Standard booth in designated zone</li>
-              <li>Brand mention in media coverage</li>
-              <li>Networking session access</li>
-            </ul>
-          </div>
-
-          <div class="sp-tier reveal delay-3" style="--tier-color: #6B7280; --tier-width: 40%;">
-            <h3>Category Partner</h3>
-            <div class="sp-tier__bar"><div class="sp-tier__bar-fill"></div></div>
-            <ul class="sp-tier__perks">
-              <li>Category-specific branding rights</li>
-              <li>Logo on event website & materials</li>
-              <li>Activation opportunity in relevant zone</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="sp-visibility">
-      <div class="sp-visibility__bg"></div>
-      <div class="container">
-        <div class="sp-visibility__header">
-          <div class="section-label reveal">Brand Visibility</div>
-          <h2 class="section-title white-text reveal delay-1">Everywhere your<br><em>audience</em> looks</h2>
-        </div>
-
-        <div class="sp-visibility__grid">
-          <div class="sp-vis-item reveal">
-            <div class="sp-vis-item__number">10M+</div>
-            <h4>Digital Impressions</h4>
-            <p>Social media, live streams, targeted advertising, and influencer content reaching millions globally.</p>
-            <div class="sp-vis-item__progress"><div class="sp-vis-item__progress-fill" data-width="90"></div></div>
-          </div>
-          <div class="sp-vis-item reveal delay-1">
-            <div class="sp-vis-item__number">500K+</div>
-            <h4>On-Ground Audience</h4>
-            <p>Physical event branding, stage backdrops, banners, LED displays, and directional signage throughout the venue.</p>
-            <div class="sp-vis-item__progress"><div class="sp-vis-item__progress-fill" data-width="75"></div></div>
-          </div>
-          <div class="sp-vis-item reveal delay-2">
-            <div class="sp-vis-item__number">50+</div>
-            <h4>Media Outlets</h4>
-            <p>TV, radio, print, and digital press coverage. Featured in articles, interviews, and event recaps.</p>
-            <div class="sp-vis-item__progress"><div class="sp-vis-item__progress-fill" data-width="65"></div></div>
-          </div>
-          <div class="sp-vis-item reveal delay-3">
-            <div class="sp-vis-item__number">20+</div>
-            <h4>Influencer Partnerships</h4>
-            <p>Top travel, lifestyle, and business influencers amplifying your brand before, during, and after the event.</p>
-            <div class="sp-vis-item__progress"><div class="sp-vis-item__progress-fill" data-width="55"></div></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="sp-cta" id="partner">
-      <div class="container">
-        <div class="sp-cta__content reveal">
-          <div class="section-label" style="justify-content:center">Ready to Partner?</div>
-          <h2 class="section-title" style="text-align:center">Let's build something<br><em>impactful</em> together</h2>
-          <p style="text-align:center;max-width:600px;margin:0 auto var(--space-lg);color:var(--text-muted);line-height:1.8">Our team is ready to present the sponsorship deck and explore how we can create a partnership tailored to your brand's objectives.</p>
-          <div class="sp-cta__actions">
-            <a href="mailto:sponsors@ittexpo.com" class="sp-cta__btn sp-cta__btn--primary">Request Sponsorship Deck</a>
-            <a href="mailto:sponsors@ittexpo.com" class="sp-cta__btn sp-cta__btn--secondary">Schedule a Meeting</a>
-          </div>
-          <div class="sp-cta__contact-info">
-            <span>ITT Expo, Dhaka</span>
-            <span>&bull;</span>
-            <a href="mailto:sponsors@ittexpo.com">sponsors@ittexpo.com</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer" id="contact">
-    <div class="footer__inner">
-      <div class="footer__brand">
-        <div class="footer__brand-name">International Trade & Tourism Expo 2026</div>
-        <p class="footer__brand-desc">The premier international event connecting nations through tourism, trade, and cultural exchange. August 21-22, Aloki, Dhaka, Bangladesh.</p>
-      </div>
-      <div class="footer__col">
-        <h4 class="footer__col-title">Quick Links</h4>
-        <ul>
-          <li><a href="index.html">Event Details</a></li>
-          <li><a href="sponsor.html">Sponsor Opportunities</a></li>
-          <li><a href="exhibitor.html">Book a Stall</a></li>
-        </ul>
-      </div>
-      <div class="footer__col">
-        <h4 class="footer__col-title">Event Info</h4>
-        <ul>
-          <li>Date: Aug 21-22, 2026</li>
-          <li>Time: 10 AM - 10 PM</li>
-          <li>Venue: Aloki, Dhaka</li>
-        </ul>
-      </div>
-      <div class="footer__col">
-        <h4 class="footer__col-title">Contact</h4>
-        <ul>
-          <li>ITT Expo, Dhaka</li>
-          <li><a href="mailto:sponsors@ittexpo.com">sponsors@ittexpo.com</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer__bottom">
-      <span>&copy; 2026 International Trade & Tourism Expo. All rights reserved.</span>
-      <span>Organized with pride in Dhaka</span>
-    </div>
-  </footer>
-
-  <script src="js/global.js"></script>
-  <script src="js/sponsor.js"></script>
-  <script src="js/design-toggle.js"></script>
-</body>
-</html>
+              <li>Exclusive naming rights: brand in official title, theme & tagline</li>
+              <li>Largest logo placement on all materials — main entrance, stage, LED screens, banners, backdrop</li>
+              <li>Keynote speaking slot at conference sessions</li>
+              <li>Premium booth in highest-traffic zone with live demo opportunity</li>
+              <li>Full social media, press & TV integration</li>
