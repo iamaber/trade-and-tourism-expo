@@ -1,4 +1,13 @@
 (function () {
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function setCountersFinal() {
+    document.querySelectorAll('.sp-stat__number').forEach(function (counter) {
+      var target = parseInt(counter.getAttribute('data-target'), 10);
+      counter.textContent = target >= 1000 ? target.toLocaleString() : target;
+    });
+  }
+
   function animateCounters() {
     var counters = document.querySelectorAll('.sp-stat__number');
     counters.forEach(function (counter) {
@@ -55,34 +64,45 @@
 
   var statsSection = document.querySelector('.sp-stats');
   if (statsSection) {
-    var statsObserver = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          animateCounters();
-          setTimeout(animateBars, 500);
-          statsObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.3 });
+    if (reduceMotion || !('IntersectionObserver' in window)) {
+      setCountersFinal();
+      animateBars();
+    } else {
+      var statsObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            animateCounters();
+            setTimeout(animateBars, 500);
+            statsObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.3 });
 
-    statsObserver.observe(statsSection);
+      statsObserver.observe(statsSection);
+    }
   }
 
   var tiersSection = document.querySelector('.sp-tiers');
   if (tiersSection) {
-    var tiersObserver = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          document.querySelectorAll('.sp-tier__bar-fill').forEach(function (bar, i) {
-            setTimeout(function () {
-              bar.classList.add('animated');
-            }, i * 200);
-          });
-          tiersObserver.unobserve(entry.target);
-        }
+    if (reduceMotion || !('IntersectionObserver' in window)) {
+      document.querySelectorAll('.sp-tier__bar-fill').forEach(function (bar) {
+        bar.classList.add('animated');
       });
-    }, { threshold: 0.2 });
+    } else {
+      var tiersObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            document.querySelectorAll('.sp-tier__bar-fill').forEach(function (bar, i) {
+              setTimeout(function () {
+                bar.classList.add('animated');
+              }, i * 200);
+            });
+            tiersObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
 
-    tiersObserver.observe(tiersSection);
+      tiersObserver.observe(tiersSection);
+    }
   }
 })();
