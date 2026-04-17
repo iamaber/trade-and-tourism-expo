@@ -1,0 +1,67 @@
+name: GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Validate site files
+        run: |
+          set -euo pipefail
+
+          for file in index.html sponsor.html exhibitor.html v2.html v3.html v4.html v5.html v6.html; do
+            test -f "$file"
+          done
+
+          for file in js/*.js; do
+            node --check "$file"
+          done
+
+      - name: Prepare Pages artifact
+        run: |
+          set -euo pipefail
+
+          mkdir -p _site
+          cp index.html sponsor.html exhibitor.html v2.html v3.html v4.html v5.html v6.html _site/
+          cp -R assets css js info _site/
+          touch _site/.nojekyll
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+
+  deploy:
+    if: github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
