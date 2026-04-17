@@ -125,6 +125,48 @@ body {
   background: var(--gold);
 }
 
+.sp-hero__partner-strip {
+  margin-top: var(--space-lg);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.sp-hero__partner-group {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  padding: 1rem 1.1rem;
+  text-align: left;
+}
+
+.sp-hero__partner-head {
+  display: block;
+  margin-bottom: 0.75rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.sp-hero__partner-logos {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  min-height: 42px;
+}
+
+.sp-hero__partner-logos img {
+  max-height: 34px;
+  width: auto;
+  display: block;
+}
+
+.sp-hero__partner-logos--light img {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+}
+
 /* ─── STATS ─── */
 .sp-stats {
   background: var(--cream);
@@ -343,7 +385,9 @@ body {
 .sp-visibility__bg {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 50%, var(--navy-light) 100%);
+  background:
+    linear-gradient(135deg, rgba(11, 29, 58, 0.94) 0%, rgba(15, 35, 66, 0.9) 55%, rgba(26, 155, 170, 0.3) 100%),
+    url('../assets/img/flags/flag-parade-2.jpg') center/cover no-repeat;
   z-index: 0;
 }
 
@@ -504,6 +548,10 @@ body {
 @media (max-width: 768px) {
   .sp-stats__inner {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .sp-hero__partner-strip {
+    grid-template-columns: 1fr;
   }
 
   .sp-tiers__grid {
