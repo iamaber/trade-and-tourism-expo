@@ -10,8 +10,9 @@
   <link rel="stylesheet" href="css/design-toggle.css">
 </head>
 <body>
+  <a href="#main" class="skip-link">Skip to content</a>
 
-  <nav class="nav">
+  <nav class="nav" role="navigation" aria-label="Main navigation">
     <div class="nav__inner">
       <a href="index.html" class="nav__logo">
         <picture><source srcset="assets/img/logo-dark.webp" type="image/webp"><img src="assets/img/logo-dark.png" alt="ITT Expo 2026" class="nav__logo-img" loading="eager" decoding="async"></picture>
@@ -19,7 +20,7 @@
       <div class="nav__links" id="site-menu">
         <a href="index.html" class="nav__link">Event</a>
         <a href="sponsor.html" class="nav__link">Sponsors</a>
-        <a href="exhibitor.html" class="nav__link active">Exhibitors</a>
+        <a href="exhibitor.html" class="nav__link">Exhibitors</a>
         <a href="index.html#contact" class="nav__link">Contact</a>
         <a href="#book" class="nav__cta">Book a Stall</a>
       </div>
@@ -31,7 +32,7 @@
   </nav>
   <div class="nav__scrim" hidden></div>
 
-  <main>
+  <main id="main">
     <section class="ex-hero">
       <div class="ex-hero__map-bg">
         <svg class="ex-hero__world-map" viewBox="0 0 1000 500" id="worldMap">
@@ -323,8 +324,8 @@
             <span class="ex-cta__early-bird-dot"></span>
             First-Come Stall Allocation
           </div>
-          <h2 class="section-title white-text" style="text-align:center">Secure your<br><em>booth</em> today</h2>
-          <p style="text-align:center;color:rgba(255,255,255,0.6);max-width:550px;margin:0 auto var(--space-lg);line-height:1.8">Stalls are allocated on a first-come basis. Early confirmation helps secure stronger placement within the exhibition layout.</p>
+          <h2 class="section-title white-text section-center">Secure your<br><em>booth</em> today</h2>
+          <p class="cta-section__desc" style="max-width:550px">Stalls are allocated on a first-come basis. Early confirmation helps secure stronger placement within the exhibition layout.</p>
           <div class="ex-cta__actions">
              <a href="mailto:sameer@nagorikprotidin.com" class="ex-btn ex-btn--primary ex-btn--large">Book Your Stall Now</a>
              <a href="info/Stall%20Invitation.docx" class="ex-btn ex-btn--outline ex-btn--large" download>Download Stall Invitation</a>

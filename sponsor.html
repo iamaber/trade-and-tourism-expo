@@ -10,15 +10,16 @@
   <link rel="stylesheet" href="css/design-toggle.css">
 </head>
 <body>
+  <a href="#main" class="skip-link">Skip to content</a>
 
-  <nav class="nav">
+  <nav class="nav" role="navigation" aria-label="Main navigation">
     <div class="nav__inner">
       <a href="index.html" class="nav__logo">
         <picture><source srcset="assets/img/logo-dark.webp" type="image/webp"><img src="assets/img/logo-dark.png" alt="ITT Expo 2026" class="nav__logo-img" loading="eager" decoding="async"></picture>
       </a>
       <div class="nav__links" id="site-menu">
         <a href="index.html" class="nav__link">Event</a>
-        <a href="sponsor.html" class="nav__link active">Sponsors</a>
+        <a href="sponsor.html" class="nav__link">Sponsors</a>
         <a href="exhibitor.html" class="nav__link">Exhibitors</a>
         <a href="index.html#contact" class="nav__link">Contact</a>
         <a href="#partner" class="nav__cta">Become a Partner</a>
@@ -31,7 +32,7 @@
   </nav>
   <div class="nav__scrim" hidden></div>
 
-  <main>
+  <main id="main">
     <section class="sp-hero">
       <div class="sp-hero__lines">
         <div class="sp-hero__line sp-hero__line--1"></div>
@@ -192,8 +193,8 @@
     <section class="sp-tiers" id="tiers">
       <div class="container">
         <div class="sp-tiers__header">
-          <div class="section-label reveal" style="justify-content:center">Partnership Tiers</div>
-          <h2 class="section-title reveal delay-1" style="text-align:center">Choose your <em>level</em> of impact</h2>
+          <div class="section-label reveal section-center">Partnership Tiers</div>
+          <h2 class="section-title reveal delay-1 section-center">Choose your <em>level</em> of impact</h2>
         </div>
 
         <div class="sp-tiers__grid">
@@ -290,9 +291,9 @@
     <section class="sp-cta" id="partner">
       <div class="container">
         <div class="sp-cta__content reveal">
-          <div class="section-label" style="justify-content:center">Ready to Partner?</div>
-          <h2 class="section-title" style="text-align:center">Let's build something<br><em>impactful</em> together</h2>
-          <p style="text-align:center;max-width:600px;margin:0 auto var(--space-lg);color:var(--text-muted);line-height:1.8">Our team is ready to present the sponsorship deck and explore how we can create a partnership tailored to your brand's objectives.</p>
+          <div class="section-label section-center">Ready to Partner?</div>
+          <h2 class="section-title section-center">Let's build something<br><em>impactful</em> together</h2>
+          <p class="cta-section__desc">Our team is ready to present the sponsorship deck and explore how we can create a partnership tailored to your brand's objectives.</p>
           <div class="sp-cta__actions">
             <a href="mailto:sameer@nagorikprotidin.com" class="sp-cta__btn sp-cta__btn--primary">Request Sponsorship Deck</a>
             <a href="info/International%20Trade%20%26%20Tourism%20Fair%202026.pptx" class="sp-cta__btn sp-cta__btn--secondary" download>Download Event Deck</a>

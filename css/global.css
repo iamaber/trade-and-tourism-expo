@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,200;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300&family=Instrument+Serif:ital@0;1&display=swap');
-
 :root {
   --navy: #0B1D3A;
   --navy-light: #122B52;
@@ -90,10 +88,74 @@ ul, ol {
   border: 0;
 }
 
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10000;
+  padding: 0.75rem 1.5rem;
+  background: var(--gold);
+  color: var(--navy);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  border-radius: 0 0 8px 8px;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 0;
+  outline: none;
+}
+
 a:focus-visible,
 button:focus-visible {
   outline: 2px solid var(--gold);
   outline-offset: 3px;
+}
+
+.hero__btn:active {
+  transform: translateY(0) !important;
+  box-shadow: none !important;
+}
+
+.nav__cta:active {
+  transform: translateY(0) !important;
+}
+
+a:active,
+.nav__link:active,
+.page-jump__link:active {
+  opacity: 0.7;
+}
+
+.section-center {
+  text-align: center;
+}
+
+.section-center .section-label {
+  justify-content: center;
+}
+
+.section-center .section-label::before {
+  display: none;
+}
+
+.cta-section__desc {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 600px;
+  margin: 0 auto var(--space-lg);
+}
+
+.footer__col-title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: var(--white);
+  margin-bottom: var(--space-sm);
+  font-style: italic;
 }
 
 /* ─── NAVIGATION ─── */
@@ -627,6 +689,32 @@ button:focus-visible {
     flex-direction: column;
     gap: var(--space-sm);
     text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero__stat-number {
+    font-size: 1.25rem;
+  }
+
+  .zone-strip__content h3 {
+    font-size: 1.15rem;
+  }
+
+  .schedule__item {
+    grid-template-columns: 50px 10px 1fr;
+  }
+
+  .schedule__time {
+    font-size: 0.7rem;
+  }
+
+  .countdown__unit {
+    min-width: 56px;
+  }
+
+  .countdown__number {
+    font-size: 2rem;
   }
 }
 

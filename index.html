@@ -5,13 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>International Trade & Tourism Expo 2026 — Dhaka</title>
   <meta name="description" content="August 21-22, 2026 at Aloki, Tejgaon, Dhaka. 40+ countries, 15,000+ visitors. South Asia's biggest international trade and tourism event. Discover the World with Business.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,200;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/global.css">
   <link rel="stylesheet" href="css/index.css">
   <link rel="stylesheet" href="css/design-toggle.css">
 </head>
 <body>
+  <a href="#main" class="skip-link">Skip to content</a>
 
-  <nav class="nav">
+  <nav class="nav" role="navigation" aria-label="Main navigation">
     <div class="nav__inner">
       <a href="index.html" class="nav__logo">
         <picture><source srcset="assets/img/logo-dark.webp" type="image/webp"><img src="assets/img/logo-dark.png" alt="ITT Expo 2026" class="nav__logo-img" loading="eager" decoding="async"></picture>
@@ -31,13 +35,13 @@
   </nav>
   <div class="nav__scrim" hidden></div>
 
-  <main>
+  <main id="main">
     <section class="hero">
       <div class="hero__bg">
         <div class="hero__grid-overlay"></div>
         <div class="hero__glow hero__glow--1"></div>
         <div class="hero__glow hero__glow--2"></div>
-        <div class="hero__particles" id="particles"></div>
+        <div class="hero__particles" id="particles" aria-hidden="true"></div>
       </div>
       <div class="hero__content">
         <div class="hero__eyebrow reveal delay-1">
@@ -80,7 +84,7 @@
           </div>
         </div>
       </div>
-      <div class="hero__scroll-hint reveal delay-6">
+      <div class="hero__scroll-hint reveal delay-6" aria-hidden="true">
         <span>Scroll to explore</span>
         <div class="hero__scroll-line"></div>
       </div>
@@ -312,7 +316,7 @@
           </div>
           <div class="activations__right reveal-right">
             <div class="activations__visual">
-              <svg viewBox="0 0 300 300" class="activations__vr-svg">
+              <svg viewBox="0 0 300 300" class="activations__vr-svg" aria-hidden="true">
                 <circle cx="150" cy="150" r="120" fill="none" stroke="rgba(200,151,62,0.2)" stroke-width="1"/>
                 <circle cx="150" cy="150" r="90" fill="none" stroke="rgba(200,151,62,0.3)" stroke-width="1" class="activations__orbit activations__orbit--1"/>
                 <circle cx="150" cy="150" r="60" fill="none" stroke="rgba(200,151,62,0.4)" stroke-width="1" class="activations__orbit activations__orbit--2"/>
@@ -519,8 +523,8 @@
             <p>A spectacular procession of national flags from every participating country — a powerful symbol of international unity and cultural diplomacy. Ambassadors and diplomats lead their nation's colors in this grand celebration.</p>
           </div>
           <div class="flags-parade__images reveal delay-1">
-            <picture><source srcset="assets/img/flags/flag-parade-1.webp" type="image/webp"><img src="assets/img/flags/flag-parade-1.jpg" alt="Flag Parade" loading="lazy" width="800" height="449"></picture>
-            <picture><source srcset="assets/img/flags/flag-parade-2.webp" type="image/webp"><img src="assets/img/flags/flag-parade-2.jpg" alt="Flag Parade" loading="lazy" width="612" height="387"></picture>
+            <picture><source srcset="assets/img/flags/flag-parade-1.webp" type="image/webp"><img src="assets/img/flags/flag-parade-1.jpg" alt="Flag Parade procession" loading="lazy" width="800" height="449"></picture>
+            <picture><source srcset="assets/img/flags/flag-parade-2.webp" type="image/webp"><img src="assets/img/flags/flag-parade-2.jpg" alt="Flag Parade diplomats" loading="lazy" width="612" height="387"></picture>
           </div>
         </div>
       </div>
@@ -569,9 +573,9 @@
       </div>
       <div class="container">
        <div class="cta-section__content reveal">
-          <div class="section-label" style="justify-content:center">Don't Miss This</div>
-          <h2 class="section-title white-text" style="text-align:center">Be part of something<br><em>extraordinary</em></h2>
-          <p style="text-align:center;color:rgba(255,255,255,0.7);max-width:600px;margin:0 auto var(--space-lg)">Join 15,000+ visitors, 40+ countries, and the biggest names in travel and hospitality. August 21-22, Aloki, Tejgaon, Dhaka.</p>
+          <div class="section-label section-center">Don't Miss This</div>
+           <h2 class="section-title white-text section-center">Be part of something<br><em>extraordinary</em></h2>
+           <p class="cta-section__desc">Join 15,000+ visitors, 40+ countries, and the biggest names in travel and hospitality. August 21-22, Aloki, Tejgaon, Dhaka.</p>
           <div class="cta-section__buttons">
             <a href="mailto:sameer@nagorikprotidin.com" class="hero__btn hero__btn--primary">Register as Visitor</a>
             <a href="info/International%20Trade%20%26%20Tourism%20Fair%202026.pptx" class="hero__btn hero__btn--secondary" download>Download Event Deck</a>
