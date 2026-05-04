@@ -29,7 +29,7 @@ jobs:
         run: |
           set -euo pipefail
 
-          for file in index.html sponsor.html exhibitor.html v2.html v3.html v4.html v5.html v6.html; do
+          for file in index.html sponsor.html exhibitor.html; do
             test -f "$file"
           done
 
@@ -42,7 +42,7 @@ jobs:
           set -euo pipefail
 
           mkdir -p _site
-          cp index.html sponsor.html exhibitor.html v2.html v3.html v4.html v5.html v6.html _site/
+          cp index.html sponsor.html exhibitor.html _site/
           cp -R assets css js info _site/
           touch _site/.nojekyll
 
