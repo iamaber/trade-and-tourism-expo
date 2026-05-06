@@ -170,10 +170,11 @@ button:focus-visible {
 /* ─── SECTION TITLE ─── */
 .section-title {
   font-family: var(--font-display);
-  font-size: clamp(2.2rem, 5vw, 3.8rem);
-  line-height: 1.1;
+  font-size: clamp(2.5rem, 5.5vw, 4.2rem);
+  line-height: 1.05;
   margin-bottom: var(--space-md);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
+  font-weight: 600;
 }
 
 .section-title em {
@@ -807,13 +808,13 @@ button:focus-visible {
 
 .hero-title {
   font-family: var(--font-display);
-  font-size: clamp(3rem, 7vw, 7rem);
+  font-size: clamp(3.5rem, 8vw, 8.5rem);
   font-weight: 700;
-  line-height: 0.96;
-  letter-spacing: -0.03em;
+  line-height: 0.92;
+  letter-spacing: -0.04em;
   color: var(--navy);
-  max-width: 880px;
-  margin-bottom: 40px;
+  max-width: 960px;
+  margin-bottom: 48px;
 }
 
 .hero-title .rule-word {
@@ -1374,11 +1375,11 @@ button:focus-visible {
 
 .ex-hero__title {
   font-family: var(--font-display);
-  font-size: clamp(3rem, 8vw, 6rem);
-  line-height: 1.05;
+  font-size: clamp(3.5rem, 9vw, 7rem);
+  line-height: 1;
   color: var(--white);
-  font-weight: 800;
-  letter-spacing: -0.03em;
+  font-weight: 700;
+  letter-spacing: -0.035em;
   margin-bottom: var(--space-md);
 }
 
@@ -1914,12 +1915,12 @@ button:focus-visible {
 
 .sp-hero__title {
   font-family: var(--font-display);
-  font-size: clamp(2.5rem, 6.5vw, 5rem);
-  line-height: 1.1;
+  font-size: clamp(3rem, 7vw, 6rem);
+  line-height: 1.05;
   color: var(--white);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
   margin-bottom: var(--space-md);
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .sp-hero__title em {
@@ -2017,7 +2018,7 @@ button:focus-visible {
 
 .sp-stat__number {
   font-family: var(--font-display);
-  font-size: clamp(3rem, 5vw, 4.5rem);
+  font-size: clamp(3.5rem, 6vw, 5.5rem);
   color: var(--navy);
   line-height: 1;
   display: inline;
