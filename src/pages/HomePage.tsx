@@ -1,8 +1,6 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { motion } from 'motion/react'
 import RevealOnScroll from '@/components/RevealOnScroll'
-import SectionLabel from '@/components/SectionLabel'
 import SpringButton from '@/components/SpringButton'
 import { useScrollReveal } from '@/hooks/useScrollReveal'
 import { ArrowRight, Globe, Hotel, Plane, UtensilsCrossed, Users, Mic, Calendar, MapPin } from 'lucide-react'

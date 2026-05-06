@@ -1,4 +1,4 @@
-import { motion } from 'motion/react'
+import { motion } from 'framer-motion'
 
 interface SpringButtonProps {
   children: React.ReactNode
@@ -6,7 +6,7 @@ interface SpringButtonProps {
   onClick?: () => void
   variant?: 'primary' | 'outline' | 'ghost'
   className?: string
-  download?: string
+  download?: boolean | string
 }
 
 export default function SpringButton({
