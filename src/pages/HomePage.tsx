@@ -1,12 +1,15 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { motion } from 'framer-motion'
 import RevealOnScroll from '@/components/RevealOnScroll'
 import SpringButton from '@/components/SpringButton'
 import { useScrollReveal } from '@/hooks/useScrollReveal'
+import { useParallax } from '@/hooks/useParallax'
 import { ArrowRight, Globe, Hotel, Plane, UtensilsCrossed, Users, Mic, Calendar, MapPin } from 'lucide-react'
 
 export default function HomePage() {
   useScrollReveal()
+  const parallaxOffset = useParallax(0.3)
 
   useEffect(() => {
     // Counter animation for hero sidebar
@@ -77,6 +80,7 @@ export default function HomePage() {
         </aside>
 
         <div className="home-hero__main">
+          <div className="hero-bg-parallax" style={{ transform: `translateY(${parallaxOffset}px)` }} />
           <div className="hero-top-rule">
             <div className="htr-tag">
               <div className="htr-dot" />
@@ -86,21 +90,36 @@ export default function HomePage() {
           </div>
           <div className="hero-content">
             <div className="hero-edition">ITT Expo &middot; Inaugural Edition &middot; 2026</div>
-            <h1 className="hero-title">
+            <motion.h1
+              className="hero-title"
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            >
               International<br />
               <span className="light-word">Trade &</span><br />
               <span className="rule-word">Tourism</span><br />
               Expo
-            </h1>
-            <p className="hero-desc">
+            </motion.h1>
+            <motion.p
+              className="hero-desc"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            >
               Bangladesh's most significant gathering of global travel brands, tourism boards, airlines, hotel chains, and industry leaders — over two extraordinary days in Dhaka.
-            </p>
-            <div className="hero-action-row">
+            </motion.p>
+            <motion.div
+              className="hero-action-row"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            >
               <SpringButton href="mailto:sameer@nagorikprotidin.com">Reserve Your Booth</SpringButton>
               <Link to="/#about" className="btn-line">
                 Explore the Expo <ArrowRight size={16} />
               </Link>
-            </div>
+            </motion.div>
           </div>
           <div className="hero-specs">
             <div className="spec-item">
@@ -168,11 +187,15 @@ export default function HomePage() {
               { num: '04', title: 'Brand & Package Promotion', desc: 'Promote travel packages, hotel offers, tour products, and services to a highly motivated and engaged audience in a premium exhibition environment.' },
             ].map((item, i) => (
               <RevealOnScroll key={item.num} delay={i + 1}>
-                <div className="bg-item">
+                <motion.div
+                  className="bg-item spring-hover"
+                  whileHover={{ y: -8, scale: 1.02 }}
+                  transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                >
                   <div className="bg-num">{item.num}</div>
                   <div className="bg-title">{item.title}</div>
                   <div className="bg-desc">{item.desc}</div>
-                </div>
+                </motion.div>
               </RevealOnScroll>
             ))}
           </div>

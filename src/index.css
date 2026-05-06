@@ -723,9 +723,16 @@ button:focus-visible {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.9) 45%, rgba(255, 255, 255, 0.18) 78%),
-    url('assets/img/premium/itte-hero-expo-hall.webp') center right / cover no-repeat;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.9) 45%, rgba(255, 255, 255, 0.18) 78%);
   z-index: 0;
+}
+
+.hero-bg-parallax {
+  position: absolute;
+  inset: -10%;
+  background: url('assets/img/premium/itte-hero-expo-hall.webp') center right / cover no-repeat;
+  z-index: -1;
+  will-change: transform;
 }
 
 .hero-top-rule {
@@ -2265,6 +2272,187 @@ button:focus-visible {
   justify-content: center;
   gap: 0.75rem;
   flex-wrap: wrap;
+}
+
+/* ─── PARALLAX ─── */
+.parallax-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.parallax-bg {
+  position: absolute;
+  inset: -20%;
+  background-size: cover;
+  background-position: center;
+  will-change: transform;
+}
+
+/* ─── SPRING HOVER ─── */
+.spring-hover {
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease;
+}
+
+.spring-hover:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 20px 60px rgba(11, 29, 58, 0.12);
+}
+
+/* ─── BOLDER TYPOGRAPHY ─── */
+.text-hero {
+  font-size: clamp(3.5rem, 9vw, 8rem);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+}
+
+.text-display {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+/* ─── DECORATIVE ACCENTS ─── */
+.gold-line {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-light));
+  display: block;
+}
+
+.gold-line-lg {
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-light));
+  display: block;
+}
+
+/* ─── ENHANCED SECTION ENTRANCES ─── */
+.section-entrance {
+  opacity: 0;
+  transform: translateY(60px) scale(0.98);
+  transition: opacity 1s var(--ease-out-expo), transform 1s var(--ease-out-expo);
+}
+
+.section-entrance.revealed {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* ─── STAGGER ITEMS ─── */
+.stagger-item {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s var(--ease-out-expo), transform 0.7s var(--ease-out-expo);
+}
+
+/* ─── DRAMATIC SPACING ─── */
+.py-dramatic {
+  padding-top: var(--space-2xl);
+  padding-bottom: var(--space-2xl);
+}
+
+.my-dramatic {
+  margin-top: var(--space-xl);
+  margin-bottom: var(--space-xl);
+}
+
+/* ─── ENHANCED HOVER STATES ─── */
+.hover-lift {
+  transition: transform 0.3s var(--ease-out-expo), box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 40px rgba(200, 151, 62, 0.15);
+}
+
+/* ─── TEXT GRADIENT (subtle, not garish) ─── */
+.text-gradient-gold {
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── ANIMATED BORDER ─── */
+.animated-border {
+  position: relative;
+}
+
+.animated-border::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold), var(--teal));
+  transition: width 0.6s var(--ease-out-expo);
+}
+
+.animated-border:hover::after {
+  width: 100%;
+}
+
+/* ─── PULSE GLOW ─── */
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 20px rgba(200, 151, 62, 0.2); }
+  50% { box-shadow: 0 0 40px rgba(200, 151, 62, 0.4); }
+}
+
+.pulse-glow {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+/* ─── FLOAT ANIMATION ─── */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.float-animation {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* ─── ROTATE SLOW ─── */
+@keyframes rotateSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.rotate-slow {
+  animation: rotateSlow 60s linear infinite;
+}
+
+/* ─── ENHANCED FOCUS ─── */
+.focus-gold:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+/* ─── GLASSMORPHISM (purposeful, rare) ─── */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ─── NOISE TEXTURE OVERLAY ─── */
+.noise-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1;
 }
 
 /* ─── EXHIBITOR/SPONSOR RESPONSIVE ─── */

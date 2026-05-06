@@ -39,6 +39,16 @@ body {
   overflow: hidden;
 }
 
+.ex-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(160deg, rgba(6, 13, 26, 0.92) 0%, rgba(6, 13, 26, 0.74) 45%, rgba(13, 34, 53, 0.86) 100%),
+    url('../assets/img/premium/itte-international-pavilions.webp') center/cover no-repeat;
+  z-index: 0;
+}
+
 .ex-hero__map-bg {
   position: absolute;
   inset: 0;
@@ -46,6 +56,7 @@ body {
   align-items: center;
   justify-content: center;
   opacity: 0;
+  z-index: 1;
   animation: mapFadeIn 2s ease forwards 0.5s;
 }
 
@@ -486,7 +497,7 @@ body {
 .ex-zone-visual img {
   width: 100%;
   height: 180px;
-  object-fit: contain;
+  object-fit: cover;
   display: block;
 }
 

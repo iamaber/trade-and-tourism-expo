@@ -135,7 +135,7 @@
     var countdownEl = document.getElementById('countdown');
     if (!countdownEl) return;
 
-    var target = new Date('2026-08-21T10:00:00+06:00').getTime();
+    var target = new Date('2026-09-04T10:00:00+06:00').getTime();
 
     function update() {
       var now = new Date().getTime();

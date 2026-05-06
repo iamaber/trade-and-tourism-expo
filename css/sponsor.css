@@ -36,6 +36,16 @@ body {
   overflow: hidden;
 }
 
+.sp-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(135deg, rgba(6, 18, 37, 0.94) 0%, rgba(6, 18, 37, 0.82) 48%, rgba(200, 151, 62, 0.22) 100%),
+    url('../assets/img/premium/itte-sponsor-lounge.webp') center/cover no-repeat;
+  z-index: 0;
+}
+
 .sp-hero__lines {
   position: absolute;
   inset: 0;
@@ -332,8 +342,18 @@ body {
   font-family: var(--sp-font-display);
   font-size: 1.4rem;
   font-weight: 600;
-  margin-bottom: var(--space-sm);
+  margin-bottom: 0.35rem;
   color: var(--navy);
+}
+
+.sp-tier__price {
+  display: block;
+  margin-bottom: var(--space-sm);
+  color: var(--tier-color, var(--gold));
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .sp-tier__bar {
@@ -387,7 +407,7 @@ body {
   inset: 0;
   background:
     linear-gradient(135deg, rgba(11, 29, 58, 0.94) 0%, rgba(15, 35, 66, 0.9) 55%, rgba(26, 155, 170, 0.3) 100%),
-    url('../assets/img/flags/flag-parade-2.jpg') center/cover no-repeat;
+    url('../assets/img/premium/itte-international-pavilions.webp') center/cover no-repeat;
   z-index: 0;
 }
 
