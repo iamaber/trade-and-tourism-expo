@@ -6,7 +6,7 @@ interface SpringButtonProps {
   href?: string
   to?: string
   onClick?: () => void
-  variant?: 'primary' | 'outline' | 'ghost'
+  variant?: 'primary' | 'outline' | 'outlineDark' | 'ghost'
   className?: string
   download?: boolean | string
 }
@@ -45,6 +45,11 @@ export default function SpringButton({
       background: 'transparent',
       color: 'var(--white)',
       border: '1px solid rgba(255,255,255,0.2)',
+    },
+    outlineDark: {
+      background: 'transparent',
+      color: 'var(--navy)',
+      border: '1px solid var(--navy)',
     },
     ghost: {
       background: 'transparent',

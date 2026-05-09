@@ -250,10 +250,10 @@ export default function SponsorPage() {
             <RevealOnScroll delay={3}>
               <div className="sp-cta__actions">
                 <SpringButton href="mailto:sameer@nagorikprotidin.com">Request Sponsorship Deck</SpringButton>
-                <SpringButton href="info/International%20Trade%20%26%20Tourism%20Fair%202026.pptx" variant="outline" download>
+                <SpringButton href="info/International%20Trade%20%26%20Tourism%20Fair%202026.pptx" variant="outlineDark" download>
                   <Download size={16} /> Download Event Deck
                 </SpringButton>
-                <SpringButton href="info/Sponsor%20Invitation.docx" variant="outline" download>
+                <SpringButton href="info/Sponsor%20Invitation.docx" variant="outlineDark" download>
                   <Download size={16} /> Download Sponsor Letter
                 </SpringButton>
               </div>
