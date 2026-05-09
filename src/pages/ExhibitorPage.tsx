@@ -69,20 +69,6 @@ export default function ExhibitorPage() {
         </div>
       </section>
 
-      {/* ─── PAGE JUMP ─── */}
-      <section className="page-jump page-jump--exhibitor">
-        <div className="container">
-          <RevealOnScroll>
-            <div className="page-jump__inner">
-              <span className="page-jump__label">Quick Route</span>
-              <a href="#why-exhibit" className="page-jump__link">Why Exhibit</a>
-              <a href="#booths" className="page-jump__link">Booth Options</a>
-              <a href="#included" className="page-jump__link">What's Included</a>
-            </div>
-          </RevealOnScroll>
-        </div>
-      </section>
-
       {/* ─── WHY EXHIBIT ─── */}
       <section className="ex-why" id="why-exhibit">
         <div className="container">
