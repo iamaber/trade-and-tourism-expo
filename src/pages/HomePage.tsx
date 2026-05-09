@@ -82,7 +82,7 @@ export default function HomePage() {
                 <img
                   src="assets/img/organizers/bloodman-white.webp"
                   alt="Bloodman"
-                  style={{ height: 46 }}
+                  style={{ height: 66 }}
                 />
                 <span
                   style={{
@@ -92,15 +92,12 @@ export default function HomePage() {
                 >
                   &
                 </span>
-                <span
-                  style={{
-                    color: "var(--white)",
-                    fontSize: "1rem",
-                    fontWeight: 700,
-                  }}
-                >
-                  GamePlay
-                </span>
+                <img
+                  src="assets/img/organizers/partner-strategic-white.webp"
+                  alt="GamePlay"
+                  loading="lazy"
+                  style={{ height: 24, width: "auto", display: "block" }}
+                />
               </div>
             </div>
             <div className="hs-divider" />

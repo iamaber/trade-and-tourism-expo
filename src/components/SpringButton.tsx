@@ -65,6 +65,21 @@ export default function SpringButton({
     transition: { type: 'spring' as const, stiffness: 400, damping: 25 },
   }
 
+  const isHashLink = typeof href === 'string' && href.startsWith('#')
+  const handleHashClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    if (!isHashLink || !href) return
+
+    const targetId = href.slice(1)
+    const target = document.getElementById(targetId)
+    if (!target) return
+
+    event.preventDefault()
+    const navHeight = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--nav-height')) || 0
+    const top = target.getBoundingClientRect().top + window.scrollY - navHeight - 12
+    window.scrollTo({ top, behavior: 'smooth' })
+    window.history.replaceState(null, '', href)
+  }
+
   if (to) {
     return (
       <Link to={to} style={{ textDecoration: 'none' }}>
@@ -81,7 +96,7 @@ export default function SpringButton({
 
   if (href) {
     return (
-      <a href={href} download={download} style={{ textDecoration: 'none' }}>
+      <a href={href} download={download} onClick={handleHashClick} style={{ textDecoration: 'none' }}>
         <motion.span
           style={{ ...baseStyles, ...variantStyles[variant] }}
           className={className}

@@ -157,19 +157,6 @@ export default function ExhibitorPage() {
               </motion.div>
             ))}
           </motion.div>
-          <RevealOnScroll delay={4}>
-            <div style={{ marginTop: '2rem' }}>
-              <picture>
-                <source srcSet="assets/img/pptx/slides-17-22/stall-render.webp" type="image/webp" />
-                <img
-                  src="assets/img/pptx/slides-17-22/stall-render.png"
-                  alt="Exhibition stall render at ITT Expo 2026"
-                  loading="lazy"
-                  style={{ width: '100%', aspectRatio: '16/9', objectFit: 'cover', borderRadius: '4px' }}
-                />
-              </picture>
-            </div>
-          </RevealOnScroll>
         </div>
       </section>
       <section className="ex-zones" id="zones">

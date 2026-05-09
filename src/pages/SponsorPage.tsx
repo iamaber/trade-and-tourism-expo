@@ -59,7 +59,12 @@ export default function SponsorPage() {
                 <span className="sp-hero__partner-head">Organized By</span>
                 <div className="sp-hero__partner-logos">
                   <img src="assets/img/organizers/bloodman-white.webp" alt="Bloodman" loading="lazy" />
-                  <span style={{ color: 'var(--white)', fontSize: '0.9rem', fontWeight: 600, alignSelf: 'center' }}>GamePlay</span>
+                  <img
+                    src="assets/img/organizers/partner-strategic.png"
+                    alt="GamePlay"
+                    loading="lazy"
+                    style={{ height: 24, width: 'auto', alignSelf: 'center' }}
+                  />
                 </div>
               </div>
               <div className="sp-hero__partner-group">

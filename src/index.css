@@ -574,14 +574,14 @@ button:focus-visible {
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-.footer__org-logos .footer__org-logo--bloodman,
-.footer__org-logos .footer__org-logo--gameplay {
-  height: 36px;
+.footer__org-logos .footer__org-logo--bloodman {
+  height: 58px;
   opacity: 1;
 }
 
-.footer__org-logos .footer__org-logo--bloodman {
-  height: 44px;
+.footer__org-logos .footer__org-logo--gameplay {
+  height: 34px;
+  opacity: 1;
 }
 
 .footer__org-logos img:hover {
