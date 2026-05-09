@@ -324,7 +324,7 @@ export default function ExhibitorPage() {
               <h2 className="section-title white-text section-center">Secure your<br /><em>booth</em> today</h2>
             </RevealOnScroll>
             <RevealOnScroll delay={2}>
-              <p className="cta-section__desc" style={{ maxWidth: 550 }}>
+              <p className="cta-section__desc ex-cta__desc--light" style={{ maxWidth: 550 }}>
                 Stalls are allocated on a first-come basis. Early confirmation helps secure stronger placement within the exhibition layout.
               </p>
             </RevealOnScroll>

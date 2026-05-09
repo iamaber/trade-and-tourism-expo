@@ -646,6 +646,10 @@ body {
   margin: 0 auto;
 }
 
+.ex-cta__desc--light {
+  color: rgba(255, 255, 255, 0.72);
+}
+
 .ex-cta__early-bird {
   display: inline-flex;
   align-items: center;

@@ -142,6 +142,10 @@ button:focus-visible {
   margin: 0 auto var(--space-lg);
 }
 
+.ex-cta__desc--light {
+  color: rgba(255, 255, 255, 0.72);
+}
+
 .cta-banner .cta-section__desc {
   color: rgba(255, 255, 255, 0.7);
 }
@@ -570,11 +574,10 @@ button:focus-visible {
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-.footer__org-logos .footer__org-name {
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 1rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
+.footer__org-logos .footer__org-logo--bloodman,
+.footer__org-logos .footer__org-logo--gameplay {
+  height: 36px;
+  opacity: 1;
 }
 
 .footer__org-logos img:hover {

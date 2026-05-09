@@ -1,5 +1,3 @@
-import { Link } from 'react-router-dom'
-
 export default function Footer() {
   return (
     <footer className="footer" id="contact">
@@ -23,10 +21,17 @@ export default function Footer() {
               <img
                 src="assets/img/organizers/bloodman-white.webp"
                 alt="Bloodman"
+                className="footer__org-logo--bloodman"
                 width="140"
                 loading="lazy"
               />
-              <span className="footer__org-name">GamePlay</span>
+              <img
+                src="assets/img/organizers/partner-strategic-white.webp"
+                alt="GamePlay"
+                className="footer__org-logo--gameplay"
+                width="140"
+                loading="lazy"
+              />
             </div>
             <span className="footer__org-label" style={{ marginTop: '0.75rem' }}>In association with</span>
             <div className="footer__org-logos">
@@ -43,9 +48,9 @@ export default function Footer() {
         <div className="footer__col">
           <h4 className="footer__col-title">Quick Links</h4>
           <ul>
-            <li><Link to="/">Event Details</Link></li>
-            <li><Link to="/sponsors">Sponsor Opportunities</Link></li>
-            <li><Link to="/register">Book a Stall</Link></li>
+            <li><a href="/index.html">Event Details</a></li>
+            <li><a href="/sponsor.html">Sponsor Opportunities</a></li>
+            <li><a href="/exhibitor.html">Book a Stall</a></li>
           </ul>
         </div>
 

@@ -73,20 +73,6 @@ export default function SponsorPage() {
         </div>
       </section>
 
-      {/* ─── PAGE JUMP ─── */}
-      <section className="page-jump page-jump--sponsor">
-        <div className="container">
-          <RevealOnScroll>
-            <div className="page-jump__inner">
-              <span className="page-jump__label">Quick Route</span>
-              <a href="#benefits" className="page-jump__link">Brand Benefits</a>
-              <a href="#tiers" className="page-jump__link">Sponsor Tiers</a>
-              <a href="#visibility" className="page-jump__link">Audience Reach</a>
-            </div>
-          </RevealOnScroll>
-        </div>
-      </section>
-
       {/* ─── STATS ─── */}
       <section className="sp-stats">
         <motion.div
