@@ -416,7 +416,7 @@ a:active,
 }
 
 .footer__org-logos .footer__org-logo--bloodman {
-  height: 36px;
+  height: 44px;
   opacity: 1;
   filter: drop-shadow(0 1px 0 rgba(255, 255, 255, 0.55)) drop-shadow(0 0 10px rgba(255, 255, 255, 0.18));
 }
@@ -482,6 +482,10 @@ a:active,
   justify-content: space-between;
   align-items: center;
   font-size: 0.8rem;
+}
+
+#contact {
+  scroll-margin-top: calc(var(--nav-height) + 1rem);
 }
 
 /* ─── SCROLL REVEAL ANIMATIONS ─── */

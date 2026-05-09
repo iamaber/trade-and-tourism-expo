@@ -50,7 +50,7 @@ export default function Footer() {
           <ul>
             <li><a href="/index.html">Event Details</a></li>
             <li><a href="/sponsor.html">Sponsor Opportunities</a></li>
-            <li><a href="/exhibitor.html">Book a Stall</a></li>
+            <li><a href="/register">Book a Stall</a></li>
           </ul>
         </div>
 

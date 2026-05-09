@@ -11,6 +11,20 @@ export default function Layout() {
     window.scrollTo(0, 0)
   }, [location.pathname])
 
+  useEffect(() => {
+    if (!location.hash) return
+
+    const id = location.hash.slice(1)
+    const el = document.getElementById(id)
+    if (!el) return
+
+    const timer = window.setTimeout(() => {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }, 0)
+
+    return () => window.clearTimeout(timer)
+  }, [location.hash, location.pathname])
+
   return (
     <>
       <a href="#main" className="skip-link">Skip to content</a>

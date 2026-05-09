@@ -580,6 +580,10 @@ button:focus-visible {
   opacity: 1;
 }
 
+.footer__org-logos .footer__org-logo--bloodman {
+  height: 44px;
+}
+
 .footer__org-logos img:hover {
   opacity: 1;
   transform: translateY(-1px);
@@ -615,6 +619,10 @@ button:focus-visible {
   justify-content: space-between;
   align-items: center;
   font-size: 0.8rem;
+}
+
+#contact {
+  scroll-margin-top: calc(var(--nav-height) + 1rem);
 }
 
 /* ─── RESPONSIVE NAV/FOOTER ─── */
