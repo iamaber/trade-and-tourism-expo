@@ -55,10 +55,10 @@ export default function HomePage() {
             <div className="hs-divider" />
             <div className="hs-label">Organised by</div>
             <div className="hs-value">
-              <img src="assets/img/organizers/nagorik-protidin.png" alt="Nagorik Protidin" style={{ height: 18, marginRight: 6, verticalAlign: 'middle' }} />
+              <img src="assets/img/organizers/nagorik-protidin-white.webp" alt="Nagorik Protidin" style={{ height: 18, marginRight: 6, verticalAlign: 'middle' }} />
               Nagorik Protidin
               <br />
-              <img src="assets/img/organizers/bloodman.png" alt="Bloodman" style={{ height: 18, marginRight: 6, marginTop: 8, verticalAlign: 'middle' }} />
+              <img src="assets/img/organizers/bloodman-white.webp" alt="Bloodman" style={{ height: 18, marginRight: 6, marginTop: 8, verticalAlign: 'middle' }} />
               Bloodman
             </div>
           </div>

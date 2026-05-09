@@ -21,13 +21,13 @@ export default function Footer() {
             <span className="footer__org-label">Organized by</span>
             <div className="footer__org-logos">
               <img
-                src="assets/img/organizers/nagorik-protidin-white.png"
+                src="assets/img/organizers/nagorik-protidin-white.webp"
                 alt="Nagorik Protidin"
                 width="140"
                 loading="lazy"
               />
               <img
-                src="assets/img/organizers/bloodman-white.png"
+                src="assets/img/organizers/bloodman-white.webp"
                 alt="Bloodman"
                 width="100"
                 loading="lazy"

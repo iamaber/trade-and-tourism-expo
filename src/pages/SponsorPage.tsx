@@ -59,8 +59,8 @@ export default function SponsorPage() {
               <div className="sp-hero__partner-group">
                 <span className="sp-hero__partner-head">Organized By</span>
                 <div className="sp-hero__partner-logos">
-                  <img src="assets/img/organizers/nagorik-protidin-white.png" alt="Nagorik Protidin" loading="lazy" />
-                  <img src="assets/img/organizers/bloodman-white.png" alt="Bloodman" loading="lazy" />
+                  <img src="assets/img/organizers/nagorik-protidin-white.webp" alt="Nagorik Protidin" loading="lazy" />
+                  <img src="assets/img/organizers/bloodman-white.webp" alt="Bloodman" loading="lazy" />
                 </div>
               </div>
               <div className="sp-hero__partner-group">

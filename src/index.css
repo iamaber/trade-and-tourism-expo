@@ -327,17 +327,15 @@ button:focus-visible {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(11, 29, 58, 0.06);
+  background: var(--navy);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .nav.scrolled {
-  background: rgba(11, 29, 58, 0.95);
+  background: var(--navy);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  box-shadow: 0 1px 0 rgba(240, 126, 33, 0.15);
+  box-shadow: 0 1px 0 rgba(240, 126, 33, 0.15), 0 4px 20px rgba(0, 0, 0, 0.3);
   border-bottom-color: transparent;
 }
 
@@ -357,9 +355,10 @@ button:focus-visible {
 }
 
 .nav__logo-img {
-  height: 42px;
+  height: 48px;
   width: auto;
   border-radius: 4px;
+  filter: brightness(1.1);
 }
 
 .nav__links {
@@ -371,7 +370,7 @@ button:focus-visible {
 .nav__link {
   font-size: 0.85rem;
   font-weight: 500;
-  color: var(--navy);
+  color: rgba(255, 255, 255, 0.7);
   letter-spacing: 0.05em;
   text-transform: uppercase;
   position: relative;
@@ -391,7 +390,7 @@ button:focus-visible {
 }
 
 .nav__link:hover {
-  color: var(--gold);
+  color: var(--white);
 }
 
 .nav__link:hover::after {
@@ -404,18 +403,6 @@ button:focus-visible {
 
 .nav__link.active::after {
   width: 100%;
-}
-
-.nav.scrolled .nav__link {
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.nav.scrolled .nav__link:hover {
-  color: var(--white);
-}
-
-.nav.scrolled .nav__link.active {
-  color: var(--gold);
 }
 
 .nav__cta {
@@ -449,11 +436,6 @@ button:focus-visible {
   background: transparent;
   border: 0;
   z-index: 1001;
-  color: var(--navy);
-  transition: color 0.3s ease;
-}
-
-.nav.scrolled .nav__mobile-toggle {
   color: var(--white);
 }
 

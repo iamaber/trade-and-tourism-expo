@@ -67,11 +67,11 @@ export default function Nav() {
       <div className="nav__inner">
         <Link to="/" className="nav__logo">
           <img
-            src={scrolled ? 'assets/img/logo-dark.png' : 'assets/img/logo.png'}
+            src="assets/img/logo-dark.png"
             alt="ITT Expo 2026"
             className="nav__logo-img"
             width="auto"
-            height="42"
+            height="48"
           />
         </Link>
 

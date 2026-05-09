@@ -5,7 +5,7 @@ import SectionLabel from '@/components/SectionLabel'
 import SpringButton from '@/components/SpringButton'
 import ProgressBar from '@/components/ProgressBar'
 import { useScrollReveal } from '@/hooks/useScrollReveal'
-import { ArrowDown, Check, Download } from 'lucide-react'
+import { ArrowDown, Check } from 'lucide-react'
 
 const stagger = {
   container: { transition: { staggerChildren: 0.08 } },
@@ -78,7 +78,6 @@ export default function ExhibitorPage() {
               <a href="#why-exhibit" className="page-jump__link">Why Exhibit</a>
               <a href="#booths" className="page-jump__link">Booth Options</a>
               <a href="#included" className="page-jump__link">What's Included</a>
-              <a href="info/Stall%20Invitation.docx" className="page-jump__link" download>Stall Invitation</a>
             </div>
           </RevealOnScroll>
         </div>
@@ -158,10 +157,21 @@ export default function ExhibitorPage() {
               </motion.div>
             ))}
           </motion.div>
+          <RevealOnScroll delay={4}>
+            <div style={{ marginTop: '2rem' }}>
+              <picture>
+                <source srcSet="assets/img/pptx/slides-17-22/stall-render.webp" type="image/webp" />
+                <img
+                  src="assets/img/pptx/slides-17-22/stall-render.png"
+                  alt="Exhibition stall render at ITT Expo 2026"
+                  loading="lazy"
+                  style={{ width: '100%', aspectRatio: '16/9', objectFit: 'cover', borderRadius: '4px' }}
+                />
+              </picture>
+            </div>
+          </RevealOnScroll>
         </div>
       </section>
-
-      {/* ─── ZONES ─── */}
       <section className="ex-zones" id="zones">
         <div className="container">
           <div className="ex-zones__header">
@@ -220,6 +230,19 @@ export default function ExhibitorPage() {
                   <span className="ex-zone-visual__eyebrow">Food & Culinary Arena</span>
                   <h3>Taste-Led Visitor Pull</h3>
                   <p>International cuisine stalls and live cooking activations keep visitors circulating through the expo floor all day.</p>
+                </div>
+              </article>
+            </RevealOnScroll>
+            <RevealOnScroll delay={2}>
+              <article className="ex-zone-visual">
+                <picture>
+                  <source srcSet="assets/img/premium/itte-international-pavilions.webp" type="image/webp" />
+                  <img src="assets/img/premium/itte-international-pavilions.webp" alt="International pavilions at ITT Expo" loading="lazy" />
+                </picture>
+                <div className="ex-zone-visual__body">
+                  <span className="ex-zone-visual__eyebrow">International Pavilions</span>
+                  <h3>Global Destination Showcase</h3>
+                  <p>Embassies and tourism boards from 30+ nations present their culture, destinations, and travel opportunities in dedicated pavilion spaces.</p>
                 </div>
               </article>
             </RevealOnScroll>
@@ -308,9 +331,6 @@ export default function ExhibitorPage() {
             <RevealOnScroll delay={3}>
               <div className="ex-cta__actions">
                 <SpringButton to="/register">Book Your Stall Now</SpringButton>
-                <SpringButton href="info/Stall%20Invitation.docx" variant="outline" download>
-                  <Download size={16} /> Download Stall Invitation
-                </SpringButton>
               </div>
             </RevealOnScroll>
             <RevealOnScroll delay={4}>
