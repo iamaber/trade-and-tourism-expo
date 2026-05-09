@@ -138,9 +138,44 @@ button:focus-visible {
 
 .cta-section__desc {
   text-align: center;
-  color: rgba(255, 255, 255, 0.7);
   max-width: 600px;
   margin: 0 auto var(--space-lg);
+}
+
+.cta-banner .cta-section__desc {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.sp-cta .cta-section__desc {
+  color: var(--text-muted);
+}
+
+.sp-cta__contact-info {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.sp-cta__contact-info a {
+  color: var(--navy);
+  transition: color 0.3s ease;
+}
+
+.sp-cta__contact-info a:hover {
+  color: var(--gold);
+}
+
+.cta-banner .cta-section__desc {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.sp-cta .cta-section__desc {
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .gold-text { color: var(--gold); }
@@ -164,6 +199,14 @@ button:focus-visible {
   content: '';
   width: 30px;
   height: 1px;
+  background: var(--gold);
+}
+
+.section-label--light {
+  color: var(--gold) !important;
+}
+
+.section-label--light::before {
   background: var(--gold);
 }
 
@@ -341,8 +384,8 @@ button:focus-visible {
 
 .nav__inner {
   width: 100%;
-  max-width: var(--max-width);
-  padding: 0 var(--space-md);
+  max-width: none;
+  padding: 0 clamp(1rem, 2.5vw, 2.25rem);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -355,7 +398,7 @@ button:focus-visible {
 }
 
 .nav__logo-img {
-  height: 48px;
+  height: 58px;
   width: auto;
   border-radius: 4px;
   filter: brightness(1.1);
@@ -531,6 +574,12 @@ button:focus-visible {
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
+.footer__org-logos .footer__org-logo--bloodman {
+  height: 42px;
+  opacity: 1;
+  filter: drop-shadow(0 1px 0 rgba(255, 255, 255, 0.55)) drop-shadow(0 0 10px rgba(255, 255, 255, 0.18));
+}
+
 .footer__org-logos img:hover {
   opacity: 1;
   transform: translateY(-1px);
@@ -576,6 +625,14 @@ button:focus-visible {
 }
 
 @media (max-width: 768px) {
+  .nav__inner {
+    padding: 0 1rem;
+  }
+
+  .nav__logo-img {
+    height: 46px;
+  }
+
   .nav__links {
     position: fixed;
     top: 0;
@@ -663,6 +720,18 @@ button:focus-visible {
   font-weight: 600;
   color: var(--white);
   line-height: 1.4;
+}
+
+.home-hero__org-logo {
+  width: auto;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+.home-hero__org-logo--bloodman {
+  height: 30px;
+  margin-top: 8px;
+  filter: drop-shadow(0 1px 0 rgba(255, 255, 255, 0.65)) drop-shadow(0 0 12px rgba(255, 255, 255, 0.18));
 }
 
 .hs-divider {
@@ -2004,6 +2073,11 @@ button:focus-visible {
   display: block;
 }
 
+.sp-hero__partner-logos .sp-hero__partner-logo--bloodman {
+  max-height: 52px;
+  filter: drop-shadow(0 1px 0 rgba(255, 255, 255, 0.7)) drop-shadow(0 0 12px rgba(255, 255, 255, 0.2));
+}
+
 .sp-hero__partner-logos--light img {
   background: rgba(255, 255, 255, 0.9);
   padding: 0.35rem 0.65rem;
@@ -2278,12 +2352,21 @@ button:focus-visible {
 .sp-cta__contact-info {
   text-align: center;
   font-size: 0.85rem;
-  color: var(--text-muted);
+  color: rgba(255, 255, 255, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.75rem;
   flex-wrap: wrap;
+}
+
+.sp-cta__contact-info a {
+  color: var(--gold);
+  transition: color 0.3s ease;
+}
+
+.sp-cta__contact-info a:hover {
+  color: var(--gold-light);
 }
 
 /* ─── PARALLAX ─── */

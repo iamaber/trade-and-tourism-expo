@@ -21,15 +21,19 @@ export default function Footer() {
             <span className="footer__org-label">Organized by</span>
             <div className="footer__org-logos">
               <img
-                src="assets/img/organizers/nagorik-protidin-white.webp"
-                alt="Nagorik Protidin"
-                width="140"
-                loading="lazy"
-              />
-              <img
                 src="assets/img/organizers/bloodman-white.webp"
                 alt="Bloodman"
                 width="100"
+                loading="lazy"
+              />
+              <span className="footer__org-name">GamePlay</span>
+            </div>
+            <span className="footer__org-label" style={{ marginTop: '0.75rem' }}>In association with</span>
+            <div className="footer__org-logos">
+              <img
+                src="assets/img/organizers/nagorik-protidin-white.webp"
+                alt="Nagorik Protidin"
+                width="120"
                 loading="lazy"
               />
             </div>
@@ -57,7 +61,6 @@ export default function Footer() {
         <div className="footer__col">
           <h4 className="footer__col-title">Contact</h4>
           <ul>
-            <li>Nagorik Protidin</li>
             <li><a href="mailto:sameer@nagorikprotidin.com">sameer@nagorikprotidin.com</a></li>
             <li><a href="tel:+8801734991111">+88 01734 991111</a></li>
           </ul>
@@ -66,7 +69,7 @@ export default function Footer() {
 
       <div className="footer__bottom">
         <span>&copy; 2026 International Trade & Tourism Expo. All rights reserved.</span>
-        <span>Organized by Nagorik Protidin & Bloodman</span>
+        <span>Organized by Bloodman & GamePlay</span>
       </div>
     </footer>
   )

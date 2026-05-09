@@ -55,11 +55,16 @@ export default function HomePage() {
             <div className="hs-divider" />
             <div className="hs-label">Organised by</div>
             <div className="hs-value">
-              <img src="assets/img/organizers/nagorik-protidin-white.webp" alt="Nagorik Protidin" style={{ height: 18, marginRight: 6, verticalAlign: 'middle' }} />
-              Nagorik Protidin
-              <br />
-              <img src="assets/img/organizers/bloodman-white.webp" alt="Bloodman" style={{ height: 18, marginRight: 6, marginTop: 8, verticalAlign: 'middle' }} />
-              Bloodman
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
+                <img src="assets/img/organizers/bloodman-white.webp" alt="Bloodman" style={{ height: 28 }} />
+                <span style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.75rem' }}>&</span>
+                <span style={{ color: 'var(--white)', fontSize: '0.85rem', fontWeight: 600 }}>GamePlay</span>
+              </div>
+            </div>
+            <div className="hs-divider" />
+            <div className="hs-label">In association with</div>
+            <div className="hs-value">
+              <img src="assets/img/organizers/nagorik-protidin-white.webp" alt="Nagorik Protidin" style={{ height: 24 }} />
             </div>
           </div>
           <div className="hs-ticker">
@@ -433,7 +438,7 @@ export default function HomePage() {
           </RevealOnScroll>
           <RevealOnScroll delay={1}>
             <p style={{ color: 'rgba(255,255,255,0.5)', lineHeight: 1.8, maxWidth: 560, marginBottom: '2.5rem' }}>
-              Limited stalls are available for ITT Expo 2026. Contact Nagorik Protidin to discuss booth packages, customised branding solutions, and participation terms. Early registration ensures preferred placement.
+              Limited stalls are available for ITT Expo 2026. Contact us to discuss booth packages, customised branding solutions, and participation terms. Early registration ensures preferred placement.
             </p>
           </RevealOnScroll>
           <RevealOnScroll delay={2}>

@@ -171,6 +171,11 @@ body {
   display: block;
 }
 
+.sp-hero__partner-logos .sp-hero__partner-logo--bloodman {
+  max-height: 52px;
+  filter: drop-shadow(0 1px 0 rgba(255, 255, 255, 0.7)) drop-shadow(0 0 12px rgba(255, 255, 255, 0.2));
+}
+
 .sp-hero__partner-logos--light img {
   background: rgba(255, 255, 255, 0.9);
   padding: 0.35rem 0.65rem;

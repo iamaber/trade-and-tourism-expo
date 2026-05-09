@@ -59,20 +59,14 @@ export default function SponsorPage() {
               <div className="sp-hero__partner-group">
                 <span className="sp-hero__partner-head">Organized By</span>
                 <div className="sp-hero__partner-logos">
-                  <img src="assets/img/organizers/nagorik-protidin-white.webp" alt="Nagorik Protidin" loading="lazy" />
                   <img src="assets/img/organizers/bloodman-white.webp" alt="Bloodman" loading="lazy" />
+                  <span style={{ color: 'var(--white)', fontSize: '0.9rem', fontWeight: 600, alignSelf: 'center' }}>GamePlay</span>
                 </div>
               </div>
               <div className="sp-hero__partner-group">
-                <span className="sp-hero__partner-head">Strategic Partner</span>
-                <div className="sp-hero__partner-logos sp-hero__partner-logos--light">
-                  <img src="assets/img/organizers/partner-strategic.jpg" alt="Strategic Partner" loading="lazy" />
-                </div>
-              </div>
-              <div className="sp-hero__partner-group">
-                <span className="sp-hero__partner-head">In Association</span>
+                <span className="sp-hero__partner-head">In Association With</span>
                 <div className="sp-hero__partner-logos">
-                  <img src="assets/img/organizers/partner-association.png" alt="Partner Association" loading="lazy" />
+                  <img src="assets/img/organizers/nagorik-protidin-white.webp" alt="Nagorik Protidin" loading="lazy" />
                 </div>
               </div>
             </div>
@@ -266,7 +260,7 @@ export default function SponsorPage() {
             </RevealOnScroll>
             <RevealOnScroll delay={4}>
               <div className="sp-cta__contact-info">
-                <span>Nagorik Protidin</span>
+                <span>Bloodman & GamePlay</span>
                 <span>&bull;</span>
                 <a href="mailto:sameer@nagorikprotidin.com">sameer@nagorikprotidin.com</a>
                 <span>&bull;</span>
