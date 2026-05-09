@@ -174,10 +174,6 @@ button:focus-visible {
   color: rgba(255, 255, 255, 0.7);
 }
 
-.sp-cta .cta-section__desc {
-  color: rgba(255, 255, 255, 0.6);
-}
-
 .gold-text { color: var(--gold); }
 .teal-text { color: var(--teal); }
 .white-text { color: var(--white); }
@@ -2352,7 +2348,7 @@ button:focus-visible {
 .sp-cta__contact-info {
   text-align: center;
   font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--text-muted);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2361,12 +2357,12 @@ button:focus-visible {
 }
 
 .sp-cta__contact-info a {
-  color: var(--gold);
+  color: var(--navy);
   transition: color 0.3s ease;
 }
 
 .sp-cta__contact-info a:hover {
-  color: var(--gold-light);
+  color: var(--gold);
 }
 
 /* ─── PARALLAX ─── */
