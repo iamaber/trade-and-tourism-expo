@@ -41,7 +41,7 @@ export default function Footer() {
           <ul>
             <li><Link to="/">Event Details</Link></li>
             <li><Link to="/sponsors">Sponsor Opportunities</Link></li>
-            <li><Link to="/exhibitors">Book a Stall</Link></li>
+            <li><Link to="/register">Book a Stall</Link></li>
           </ul>
         </div>
 

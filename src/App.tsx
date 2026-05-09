@@ -4,6 +4,7 @@ import Layout from '@/components/Layout'
 import HomePage from '@/pages/HomePage'
 import ExhibitorPage from '@/pages/ExhibitorPage'
 import SponsorPage from '@/pages/SponsorPage'
+import AuthPage from '@/pages/AuthPage'
 
 function App() {
   const location = useLocation()
@@ -16,6 +17,7 @@ function App() {
           <Route path="/exhibitors" element={<ExhibitorPage />} />
           <Route path="/sponsors" element={<SponsorPage />} />
         </Route>
+        <Route path="/register" element={<AuthPage />} />
       </Routes>
     </AnimatePresence>
   )

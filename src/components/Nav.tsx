@@ -67,7 +67,7 @@ export default function Nav() {
       <div className="nav__inner">
         <Link to="/" className="nav__logo">
           <img
-            src="assets/img/logo-dark.png"
+            src={scrolled ? 'assets/img/logo-dark.png' : 'assets/img/logo.png'}
             alt="ITT Expo 2026"
             className="nav__logo-img"
             width="auto"
@@ -86,9 +86,9 @@ export default function Nav() {
               {link.label}
             </Link>
           ))}
-          <Link to="/exhibitors#book" className="nav__cta">
-            Book a Stall
-          </Link>
+<Link to="/register" className="nav__cta">
+              Book a Stall
+            </Link>
         </div>
 
         <button

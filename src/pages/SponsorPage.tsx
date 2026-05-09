@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import RevealOnScroll from '@/components/RevealOnScroll'
 import SectionLabel from '@/components/SectionLabel'
 import SpringButton from '@/components/SpringButton'
@@ -5,6 +6,14 @@ import CountUp from '@/components/CountUp'
 import ProgressBar from '@/components/ProgressBar'
 import { useScrollReveal } from '@/hooks/useScrollReveal'
 import { Download } from 'lucide-react'
+
+const stagger = {
+  container: { transition: { staggerChildren: 0.08 } },
+  item: {
+    hidden: { opacity: 0, y: 25 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' as const } },
+  },
+}
 
 export default function SponsorPage() {
   useScrollReveal()
@@ -88,24 +97,30 @@ export default function SponsorPage() {
 
       {/* ─── STATS ─── */}
       <section className="sp-stats">
-        <div className="sp-stats__inner container">
-          {[
-            { target: 40, suffix: '+', label: 'Countries Represented', width: 85 },
-            { target: 15000, suffix: '+', label: 'High-Value Visitors', width: 95 },
-            { target: 30, suffix: '+', label: 'International Pavilions', width: 75 },
-            { target: 8, suffix: '', label: 'Dedicated Event Zones', width: 60 },
-          ].map((stat, i) => (
-            <RevealOnScroll key={stat.label} delay={i + 1}>
-              <div className="sp-stat">
-                <span className="sp-stat__number">
-                  <CountUp target={stat.target} suffix={stat.suffix} />
-                </span>
-                <span className="sp-stat__label">{stat.label}</span>
-                <ProgressBar width={stat.width} color="linear-gradient(90deg, var(--gold), var(--teal))" delay={i * 200} />
-              </div>
-            </RevealOnScroll>
-          ))}
-        </div>
+        <motion.div
+            className="sp-stats__inner container"
+            variants={stagger.container}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            {[
+              { target: 40, suffix: '+', label: 'Countries Represented', width: 85 },
+              { target: 15000, suffix: '+', label: 'High-Value Visitors', width: 95 },
+              { target: 30, suffix: '+', label: 'International Pavilions', width: 75 },
+              { target: 8, suffix: '', label: 'Dedicated Event Zones', width: 60 },
+            ].map((stat) => (
+              <motion.div key={stat.label} variants={stagger.item}>
+                <div className="sp-stat">
+                  <span className="sp-stat__number">
+                    <CountUp target={stat.target} suffix={stat.suffix} />
+                  </span>
+                  <span className="sp-stat__label">{stat.label}</span>
+                  <ProgressBar width={stat.width} color="linear-gradient(90deg, var(--gold), var(--teal))" delay={0} />
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
       </section>
 
       {/* ─── BENEFITS ─── */}
@@ -117,15 +132,21 @@ export default function SponsorPage() {
               <h2 className="section-title">Your brand deserves<br /><em>this stage</em></h2>
             </RevealOnScroll>
           </div>
-          <div className="sp-benefits__list">
+          <motion.div
+            className="sp-benefits__list"
+            variants={stagger.container}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
             {[
               { num: '01', title: 'Premium Brand Visibility', desc: 'Your logo and brand identity featured prominently across all event platforms — from digital campaigns and social media to on-ground signage, stage backdrops, and printed materials.' },
               { num: '02', title: 'Direct Decision-Maker Access', desc: 'Engage face-to-face with government officials, embassy representatives, airline executives, hospitality leaders, and high-net-worth travelers from 40+ nations.' },
               { num: '03', title: 'Government & Embassy Association', desc: 'Align your brand with government bodies, international organizations, and diplomatic missions. Enhance credibility through official institutional partnerships.' },
               { num: '04', title: 'Exclusive Networking & Leads', desc: 'Pre-scheduled B2B meetings, VIP networking lounges, and dedicated matchmaking sessions designed to generate qualified business leads and strategic partnerships.' },
               { num: '05', title: 'Digital & Media Amplification', desc: 'Featured across press releases, TV coverage, digital campaigns, influencer partnerships, and social media content reaching millions across South Asia and beyond.' },
-            ].map((item, i) => (
-              <RevealOnScroll key={item.num} delay={i + 1}>
+            ].map((item) => (
+              <motion.div key={item.num} variants={stagger.item}>
                 <div className="sp-benefit">
                   <div className="sp-benefit__line" />
                   <div className="sp-benefit__content">
@@ -136,9 +157,9 @@ export default function SponsorPage() {
                     <p>{item.desc}</p>
                   </div>
                 </div>
-              </RevealOnScroll>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -151,14 +172,20 @@ export default function SponsorPage() {
               <h2 className="section-title section-center">Choose your <em>level</em> of impact</h2>
             </RevealOnScroll>
           </div>
-          <div className="sp-tiers__grid">
+          <motion.div
+            className="sp-tiers__grid"
+            variants={stagger.container}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-60px' }}
+          >
             {[
-              { badge: 'Most Visible', title: 'Title Sponsor', color: '#C8973E', width: '100%', perks: ['Exclusive naming rights: brand in official title, theme & tagline', 'Largest logo placement on all materials — main entrance, stage, LED screens, banners, backdrop', 'Keynote speaking slot at conference sessions', 'Premium booth in highest-traffic zone with live demo opportunity', 'Full social media, press & TV integration', 'Foreign Pavilion branding under sponsor name with direct diplomatic exposure'] },
-              { title: 'Powered By Sponsor', color: '#DEB368', width: '80%', perks: ['Co-branding on select event assets and collateral', 'Large booth in premium zone with product & service live demonstration', 'Conference panel participation & networking access', 'Dedicated social media campaign & influencer amplification', 'Sponsor lounge access for Ambassadors, Ministers & CXOs', 'Customer data collection and lead generation opportunity'] },
+              { badge: 'Most Visible', title: 'Title Sponsor', color: '#F07E21', width: '100%', perks: ['Exclusive naming rights: brand in official title, theme & tagline', 'Largest logo placement on all materials — main entrance, stage, LED screens, banners, backdrop', 'Keynote speaking slot at conference sessions', 'Premium booth in highest-traffic zone with live demo opportunity', 'Full social media, press & TV integration', 'Foreign Pavilion branding under sponsor name with direct diplomatic exposure'] },
+              { title: 'Powered By Sponsor', color: '#F5A623', width: '80%', perks: ['Co-branding on select event assets and collateral', 'Large booth in premium zone with product & service live demonstration', 'Conference panel participation & networking access', 'Dedicated social media campaign & influencer amplification', 'Sponsor lounge access for Ambassadors, Ministers & CXOs', 'Customer data collection and lead generation opportunity'] },
               { title: 'Co-Sponsor', color: '#1A9BAA', width: '60%', perks: ['Logo placement on event materials, website & social media', 'Standard booth in designated zone', 'Brand mention in TV, newspaper & digital press coverage', 'Networking session & VIP lounge access', 'Inclusion in event live streaming & press releases'] },
               { title: 'Category Partner', color: '#6B7280', width: '40%', perks: ['Category-specific branding rights (e.g. aviation, hospitality, technology)', 'Logo on event website & printed materials', 'Activation opportunity in relevant zone', '"World in One Frame" iconic photo booth with sponsor branding'] },
-            ].map((tier, i) => (
-              <RevealOnScroll key={tier.title} delay={i + 1}>
+            ].map((tier) => (
+              <motion.div key={tier.title} variants={stagger.item}>
                 <div className="sp-tier" style={{ '--tier-color': tier.color, '--tier-width': tier.width } as React.CSSProperties}>
                   {tier.badge && <div className="sp-tier__badge">{tier.badge}</div>}
                   <h3>{tier.title}</h3>
@@ -171,9 +198,9 @@ export default function SponsorPage() {
                     ))}
                   </ul>
                 </div>
-              </RevealOnScroll>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -187,23 +214,29 @@ export default function SponsorPage() {
               <h2 className="section-title white-text">Everywhere your<br /><em>audience</em> looks</h2>
             </RevealOnScroll>
           </div>
-          <div className="sp-visibility__grid">
+          <motion.div
+            className="sp-visibility__grid"
+            variants={stagger.container}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
             {[
               { number: 'ENTRY', title: 'Main Entrance & Welcome Walls', desc: 'Prime sponsor identity across event entry points, welcome branding, directional signage, and opening arrival moments.', width: 90 },
               { number: 'STAGE', title: 'Conference & Session Presence', desc: 'Logo visibility around keynote sessions, seminar hall branding, moderated talks, and sponsor acknowledgements on stage.', width: 75 },
               { number: 'ZONE', title: 'Foreign Pavilion & Zone Branding', desc: 'Category takeovers and co-branding opportunities inside the global tourism pavilion, networking lounge, and themed activity zones.', width: 65 },
               { number: 'MEDIA', title: 'Deck, Print & Organiser Outreach', desc: 'Brand inclusion across the official deck, organiser materials, sponsor correspondence, and event communication assets.', width: 55 },
-            ].map((item, i) => (
-              <RevealOnScroll key={item.number} delay={i + 1}>
+            ].map((item) => (
+              <motion.div key={item.number} variants={stagger.item}>
                 <div className="sp-vis-item">
                   <div className="sp-vis-item__number">{item.number}</div>
                   <h4>{item.title}</h4>
                   <p>{item.desc}</p>
-                  <ProgressBar width={item.width} color="linear-gradient(90deg, var(--gold), var(--teal))" delay={i * 200} />
+                  <ProgressBar width={item.width} color="linear-gradient(90deg, var(--gold), var(--teal))" delay={0} />
                 </div>
-              </RevealOnScroll>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 

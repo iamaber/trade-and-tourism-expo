@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 
 interface SpringButtonProps {
   children: React.ReactNode
   href?: string
+  to?: string
   onClick?: () => void
   variant?: 'primary' | 'outline' | 'ghost'
   className?: string
@@ -12,6 +14,7 @@ interface SpringButtonProps {
 export default function SpringButton({
   children,
   href,
+  to,
   onClick,
   variant = 'primary',
   className = '',
@@ -51,29 +54,49 @@ export default function SpringButton({
     },
   }
 
-  const content = (
-    <motion.span
-      style={{ ...baseStyles, ...variantStyles[variant] }}
-      className={className}
-      whileHover={{ y: -2, boxShadow: variant === 'primary' ? '0 4px 20px rgba(200,151,62,0.4)' : undefined }}
-      whileTap={{ y: 0, boxShadow: 'none' }}
-      transition={{ type: 'spring', stiffness: 400, damping: 25 }}
-    >
-      {children}
-    </motion.span>
-  )
+  const motionProps = {
+    whileHover: { y: -2, boxShadow: variant === 'primary' ? '0 4px 20px rgba(240,126,33,0.4)' : undefined },
+    whileTap: { y: 0, boxShadow: 'none' },
+    transition: { type: 'spring' as const, stiffness: 400, damping: 25 },
+  }
+
+  if (to) {
+    return (
+      <Link to={to} style={{ textDecoration: 'none' }}>
+        <motion.span
+          style={{ ...baseStyles, ...variantStyles[variant] }}
+          className={className}
+          {...motionProps}
+        >
+          {children}
+        </motion.span>
+      </Link>
+    )
+  }
 
   if (href) {
     return (
       <a href={href} download={download} style={{ textDecoration: 'none' }}>
-        {content}
+        <motion.span
+          style={{ ...baseStyles, ...variantStyles[variant] }}
+          className={className}
+          {...motionProps}
+        >
+          {children}
+        </motion.span>
       </a>
     )
   }
 
   return (
     <button onClick={onClick} style={{ background: 'none', border: 'none', padding: 0 }}>
-      {content}
+      <motion.span
+        style={{ ...baseStyles, ...variantStyles[variant] }}
+        className={className}
+        {...motionProps}
+      >
+        {children}
+      </motion.span>
     </button>
   )
 }

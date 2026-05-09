@@ -1,10 +1,19 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 import RevealOnScroll from '@/components/RevealOnScroll'
 import SectionLabel from '@/components/SectionLabel'
 import SpringButton from '@/components/SpringButton'
 import ProgressBar from '@/components/ProgressBar'
 import { useScrollReveal } from '@/hooks/useScrollReveal'
 import { ArrowDown, Check, Download } from 'lucide-react'
+
+const stagger = {
+  container: { transition: { staggerChildren: 0.08 } },
+  item: {
+    hidden: { opacity: 0, y: 25 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' as const } },
+  },
+}
 
 export default function ExhibitorPage() {
   useScrollReveal()
@@ -19,9 +28,9 @@ export default function ExhibitorPage() {
             <path className="map-path" d="M530,140 Q580,100 650,130 Q700,110 750,140 Q790,120 820,150 Q850,135 870,155 Q880,145 880,160 L880,170 Q850,190 820,175 Q790,200 760,180 Q730,195 700,175 Q670,190 640,170 Q610,195 580,175 Q550,190 530,175Z" fill="none" stroke="rgba(26,155,170,0.15)" strokeWidth="1" />
             <path className="map-path" d="M420,200 Q460,170 500,190 Q530,175 560,195 Q580,180 600,200 L600,210 Q570,230 540,215 Q510,235 480,220 Q450,240 420,220Z" fill="none" stroke="rgba(26,155,170,0.15)" strokeWidth="1" />
             <path className="map-path" d="M650,200 Q700,175 750,200 Q780,185 800,210 Q820,195 830,215 L830,225 Q810,245 790,230 Q760,250 730,235 Q700,250 680,235 Q660,250 650,240Z" fill="none" stroke="rgba(26,155,170,0.15)" strokeWidth="1" />
-            <circle className="map-dot" cx="500" cy="210" r="4" fill="#C8973E" />
-            <circle className="map-dot map-dot--pulse" cx="500" cy="210" r="8" fill="none" stroke="#C8973E" strokeWidth="1" />
-            <text x="500" y="240" textAnchor="middle" fill="#C8973E" fontSize="12" fontWeight="600" fontFamily="Outfit, sans-serif" letterSpacing="2">DHAKA</text>
+            <circle className="map-dot" cx="500" cy="210" r="4" fill="#F07E21" />
+            <circle className="map-dot map-dot--pulse" cx="500" cy="210" r="8" fill="none" stroke="#F07E21" strokeWidth="1" />
+            <text x="500" y="240" textAnchor="middle" fill="#F07E21" fontSize="12" fontWeight="600" fontFamily="Outfit, sans-serif" letterSpacing="2">DHAKA</text>
             <circle className="map-dot map-dot--small" cx="200" cy="170" r="3" fill="#1A9BAA" />
             <circle className="map-dot map-dot--small" cx="780" cy="150" r="3" fill="#1A9BAA" />
             <circle className="map-dot map-dot--small" cx="650" cy="170" r="3" fill="#1A9BAA" />
@@ -48,7 +57,7 @@ export default function ExhibitorPage() {
           </RevealOnScroll>
           <RevealOnScroll delay={3}>
             <div className="ex-hero__actions">
-              <SpringButton href="#book">Book Your Stall</SpringButton>
+              <SpringButton to="/register">Book Your Stall</SpringButton>
               <SpringButton href="#booths" variant="outline">View Booth Options</SpringButton>
             </div>
           </RevealOnScroll>
@@ -122,13 +131,19 @@ export default function ExhibitorPage() {
               <h2 className="section-title">Find your <em>perfect</em> fit</h2>
             </RevealOnScroll>
           </div>
-          <div className="ex-booth-compare">
+          <motion.div
+            className="ex-booth-compare"
+            variants={stagger.container}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-80px' }}
+          >
             {[
               { type: 'Standard Booth', area: 'Dedicated showcase footprint', width: 33, features: ['Dedicated booth space', 'Company signage', 'Brand listing in event materials', 'Direct customer engagement'] },
               { type: 'Featured Zone Booth', area: 'Enhanced branded presence', width: 60, features: ['Preferred placement in a high-traffic zone', 'Custom branding opportunity', 'Live offer or service demonstrations', 'Access to networking sessions', 'Stronger visibility across visitor routes'] },
               { type: 'Pavilion Showcase', area: 'Immersive destination or brand setup', width: 100, popular: true, features: ['Best-fit for tourism boards, airlines, and hospitality leaders', 'Expanded branded environment', 'Placement near major showcase areas', 'High-touch visitor engagement format', 'Strong diplomatic and media visibility', 'Ideal for landmark brand storytelling'] },
             ].map((booth, i) => (
-              <RevealOnScroll key={booth.type} delay={i + 1}>
+              <motion.div key={booth.type} variants={stagger.item}>
                 <div className={`ex-booth ${booth.popular ? 'ex-booth--vip' : ''}`}>
                   {booth.popular && <div className="ex-booth__popular">Premium Presence</div>}
                   <div className="ex-booth__type">{booth.type}</div>
@@ -140,9 +155,9 @@ export default function ExhibitorPage() {
                     ))}
                   </ul>
                 </div>
-              </RevealOnScroll>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -156,24 +171,30 @@ export default function ExhibitorPage() {
             </RevealOnScroll>
           </div>
         </div>
-        <div className="ex-zone-bands">
-          {[
-            { name: 'Global Tourism Pavilion', detail: 'Embassies • Tourism Boards • Travel Info', color: '#1A9BAA' },
-            { name: 'Hospitality & Hotel Zone', detail: '5-Star Hotels • Resorts • VR Experiences', color: '#C8973E' },
-            { name: 'Aviation & Travel Zone', detail: 'Airlines • Agencies • Cruise Lines', color: '#0B1D3A' },
-            { name: 'Food & Culinary Arena', detail: 'International Cuisine • Live Cooking • Tastings', color: '#2D6A4F' },
-            { name: 'B2B Networking Lounge', detail: 'Matchmaking • Meetings • Deal Making', color: '#7B2D8B' },
-          ].map((zone, i) => (
-            <RevealOnScroll key={zone.name} delay={i + 1}>
-              <div className="ex-zone-band" style={{ '--zone-color': zone.color } as React.CSSProperties} data-zone-color={zone.color}>
-                <div className="ex-zone-band__inner container">
-                  <span className="ex-zone-band__name">{zone.name}</span>
-                  <span className="ex-zone-band__detail">{zone.detail}</span>
+<motion.div
+            className="ex-zone-bands"
+            variants={stagger.container}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            {[
+              { name: 'Global Tourism Pavilion', detail: 'Embassies • Tourism Boards • Travel Info', color: '#1A9BAA' },
+              { name: 'Hospitality & Hotel Zone', detail: '5-Star Hotels • Resorts • VR Experiences', color: '#F07E21' },
+              { name: 'Aviation & Travel Zone', detail: 'Airlines • Agencies • Cruise Lines', color: '#0B1D3A' },
+              { name: 'Food & Culinary Arena', detail: 'International Cuisine • Live Cooking • Tastings', color: '#2D6A4F' },
+              { name: 'B2B Networking Lounge', detail: 'Matchmaking • Meetings • Deal Making', color: '#7B2D8B' },
+            ].map((zone) => (
+              <motion.div key={zone.name} variants={stagger.item}>
+                <div className="ex-zone-band" style={{ '--zone-color': zone.color } as React.CSSProperties} data-zone-color={zone.color}>
+                  <div className="ex-zone-band__inner container">
+                    <span className="ex-zone-band__name">{zone.name}</span>
+                    <span className="ex-zone-band__detail">{zone.detail}</span>
+                  </div>
                 </div>
-              </div>
-            </RevealOnScroll>
-          ))}
-        </div>
+              </motion.div>
+            ))}
+          </motion.div>
         <div className="container">
           <div className="ex-zone-visuals">
             <RevealOnScroll>
@@ -235,7 +256,13 @@ export default function ExhibitorPage() {
               <h2 className="section-title">Everything you need<br />to <em>succeed</em></h2>
             </RevealOnScroll>
           </div>
-          <div className="ex-included__grid">
+          <motion.div
+            className="ex-included__grid"
+            variants={stagger.container}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
             {[
               'Booth space with basic setup',
               'Company listing in event directory',
@@ -245,15 +272,15 @@ export default function ExhibitorPage() {
               'Embassy, corporate client & investor touchpoints',
               'Promotion of packages, services, and exclusive offers',
               'First-come stall allocation support',
-            ].map((item, i) => (
-              <RevealOnScroll key={item} delay={i + 1}>
+            ].map((item) => (
+              <motion.div key={item} variants={stagger.item}>
                 <div className="ex-inc-item">
                   <div className="ex-inc-item__check"><Check size={14} /></div>
                   <span>{item}</span>
                 </div>
-              </RevealOnScroll>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -280,7 +307,7 @@ export default function ExhibitorPage() {
             </RevealOnScroll>
             <RevealOnScroll delay={3}>
               <div className="ex-cta__actions">
-                <SpringButton href="mailto:sameer@nagorikprotidin.com">Book Your Stall Now</SpringButton>
+                <SpringButton to="/register">Book Your Stall Now</SpringButton>
                 <SpringButton href="info/Stall%20Invitation.docx" variant="outline" download>
                   <Download size={16} /> Download Stall Invitation
                 </SpringButton>

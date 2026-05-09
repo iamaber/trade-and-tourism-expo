@@ -7,6 +7,14 @@ import { useScrollReveal } from '@/hooks/useScrollReveal'
 import { useParallax } from '@/hooks/useParallax'
 import { ArrowRight, Globe, Hotel, Plane, UtensilsCrossed, Users, Mic, Calendar, MapPin } from 'lucide-react'
 
+const stagger = {
+  container: { transition: { staggerChildren: 0.1 } },
+  item: {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' as const } },
+  },
+}
+
 export default function HomePage() {
   useScrollReveal()
   const parallaxOffset = useParallax(0.3)
@@ -115,13 +123,18 @@ export default function HomePage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
             >
-              <SpringButton href="mailto:sameer@nagorikprotidin.com">Reserve Your Booth</SpringButton>
+              <SpringButton to="/register">Reserve Your Booth</SpringButton>
               <Link to="/#about" className="btn-line">
                 Explore the Expo <ArrowRight size={16} />
               </Link>
             </motion.div>
           </div>
-          <div className="hero-specs">
+          <motion.div
+            className="hero-specs"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 1 }}
+          >
             <div className="spec-item">
               <div className="spec-num">30+</div>
               <div className="spec-label">International Pavilions</div>
@@ -134,7 +147,7 @@ export default function HomePage() {
               <div className="spec-num">40+</div>
               <div className="spec-label">Countries</div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -179,14 +192,20 @@ export default function HomePage() {
           <RevealOnScroll>
             <h2 className="section-title">Exhibitor <em>Advantages</em></h2>
           </RevealOnScroll>
-          <div className="benefit-grid">
+          <motion.div
+            className="benefit-grid"
+            variants={stagger.container}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-80px' }}
+          >
             {[
               { num: '01', title: 'Prime Exhibition Booth', desc: 'A dedicated, high-traffic position with custom branding options — allocated on a first-come basis to ensure optimal placement within the exhibition floor.' },
               { num: '02', title: 'Qualified Audience Access', desc: 'Direct face time with verified travel agents, corporate buyers, embassy officials, investors, and 15,000+ consumer visitors over two days.' },
               { num: '03', title: 'Embassy & Diplomatic Network', desc: 'Exclusive access to representatives from embassies, consulates, and government tourism bodies — creating unparalleled partnership potential.' },
               { num: '04', title: 'Brand & Package Promotion', desc: 'Promote travel packages, hotel offers, tour products, and services to a highly motivated and engaged audience in a premium exhibition environment.' },
-            ].map((item, i) => (
-              <RevealOnScroll key={item.num} delay={i + 1}>
+            ].map((item) => (
+              <motion.div key={item.num} variants={stagger.item}>
                 <motion.div
                   className="bg-item spring-hover"
                   whileHover={{ y: -8, scale: 1.02 }}
@@ -196,9 +215,9 @@ export default function HomePage() {
                   <div className="bg-title">{item.title}</div>
                   <div className="bg-desc">{item.desc}</div>
                 </motion.div>
-              </RevealOnScroll>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -290,12 +309,18 @@ export default function HomePage() {
             <h2 className="section-title">Participating <em>nations</em></h2>
           </RevealOnScroll>
           <RevealOnScroll delay={1}>
-            <div className="nation-tags">
+            <motion.div
+              className="nation-tags"
+              variants={stagger.container}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
               {['🇮🇳 India', '🇳🇵 Nepal', '🇧🇹 Bhutan', '🇱🇰 Sri Lanka', '🇨🇳 China', '🇯🇵 Japan', '🇰🇷 South Korea', '🇲🇾 Malaysia', '🇮🇩 Indonesia', '🇹🇷 Turkey', '🇳🇬 Nigeria', '🇸🇴 Somalia', '🇪🇬 Egypt', '🇵🇸 Palestine', '🇺🇿 Uzbekistan'].map((nation) => (
-                <span key={nation} className="nation-tag">{nation}</span>
+                <motion.span key={nation} className="nation-tag" variants={stagger.item}>{nation}</motion.span>
               ))}
               <span className="nation-tag" style={{ fontStyle: 'italic' }}>& many more</span>
-            </div>
+            </motion.div>
           </RevealOnScroll>
         </div>
       </section>
@@ -309,16 +334,22 @@ export default function HomePage() {
           <RevealOnScroll>
             <h2 className="section-title">Cultural <em>showcase</em></h2>
           </RevealOnScroll>
-          <div className="cultural-grid">
+          <motion.div
+            className="cultural-grid"
+            variants={stagger.container}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-60px' }}
+          >
             {[
-              { img: 'chinese-fan-dance', label: 'Chinese Fan Dance 🇨🇳' },
+              { img: 'chinese-dragon-dance', label: 'Chinese Dragon Dance 🇨🇳' },
               { img: 'nepali-folk-dance', label: 'Nepali Folk Dance 🇳🇵' },
-              { img: 'african-tribal-dance', label: 'African Tribal Dance 🇳🇬' },
-              { img: 'kashmiri-dance', label: 'Kashmiri Cultural Dance 🇮🇳' },
-              { img: 'indonesian-fashion', label: 'Indonesian Fashion Show 🇮🇩' },
+              { img: 'african-music', label: 'African Tribal Dance 🇳🇬' },
+              { img: 'kashmiri-cultural-dance', label: 'Kashmiri Cultural Dance 🇮🇳' },
+              { img: 'multi-cultural-fashion', label: 'Multi-Cultural Fashion 🇮🇩' },
               { img: 'indian-folk-dance', label: 'Indian Folk Dance 🇮🇳' },
-            ].map((item, i) => (
-              <RevealOnScroll key={item.img} delay={i + 1}>
+            ].map((item) => (
+              <motion.div key={item.img} variants={stagger.item}>
                 <div className="cultural-item">
                   <picture>
                     <source srcSet={`assets/img/cultural/${item.img}.webp`} type="image/webp" />
@@ -331,9 +362,9 @@ export default function HomePage() {
                   </picture>
                   <p className="cultural-label">{item.label}</p>
                 </div>
-              </RevealOnScroll>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -346,8 +377,14 @@ export default function HomePage() {
           <RevealOnScroll>
             <h2 className="section-title">Distinguished <em>guests</em></h2>
           </RevealOnScroll>
-          <div className="guests-grid">
-            <RevealOnScroll delay={1}>
+          <motion.div
+            className="guests-grid"
+            variants={stagger.container}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <motion.div variants={stagger.item}>
               <div>
                 <h3 style={{ marginBottom: '0.75rem', fontSize: '1rem' }}>Government & Regulatory</h3>
                 <ul className="guest-list">
@@ -358,8 +395,8 @@ export default function HomePage() {
                   <li>Chairman, Bangladesh Parjatan Corporation</li>
                 </ul>
               </div>
-            </RevealOnScroll>
-            <RevealOnScroll delay={2}>
+            </motion.div>
+            <motion.div variants={stagger.item}>
               <div>
                 <h3 style={{ marginBottom: '0.75rem', fontSize: '1rem' }}>Diplomatic Corps</h3>
                 <ul className="guest-list">
@@ -368,8 +405,8 @@ export default function HomePage() {
                   <li>Embassy trade & cultural attaches</li>
                 </ul>
               </div>
-            </RevealOnScroll>
-            <RevealOnScroll delay={3}>
+            </motion.div>
+            <motion.div variants={stagger.item}>
               <div>
                 <h3 style={{ marginBottom: '0.75rem', fontSize: '1rem' }}>Industry Leaders</h3>
                 <ul className="guest-list">
@@ -380,8 +417,8 @@ export default function HomePage() {
                   <li>Travel-tech startup founders & VCs</li>
                 </ul>
               </div>
-            </RevealOnScroll>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
@@ -401,7 +438,7 @@ export default function HomePage() {
           </RevealOnScroll>
           <RevealOnScroll delay={2}>
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-              <SpringButton href="mailto:sameer@nagorikprotidin.com">Request a Proposal</SpringButton>
+              <SpringButton to="/register">Secure Your Space</SpringButton>
               <SpringButton href="tel:+8801734991111" variant="outline">Call +88 01734 991111</SpringButton>
             </div>
           </RevealOnScroll>
