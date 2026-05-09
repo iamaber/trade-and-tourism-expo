@@ -5,7 +5,6 @@ import SpringButton from '@/components/SpringButton'
 import CountUp from '@/components/CountUp'
 import ProgressBar from '@/components/ProgressBar'
 import { useScrollReveal } from '@/hooks/useScrollReveal'
-import { Download } from 'lucide-react'
 
 const stagger = {
   container: { transition: { staggerChildren: 0.08 } },
@@ -83,7 +82,6 @@ export default function SponsorPage() {
               <a href="#benefits" className="page-jump__link">Brand Benefits</a>
               <a href="#tiers" className="page-jump__link">Sponsor Tiers</a>
               <a href="#visibility" className="page-jump__link">Audience Reach</a>
-              <a href="info/International%20Trade%20%26%20Tourism%20Fair%202026.pptx" className="page-jump__link" download>Event Deck</a>
             </div>
           </RevealOnScroll>
         </div>
@@ -250,12 +248,6 @@ export default function SponsorPage() {
             <RevealOnScroll delay={3}>
               <div className="sp-cta__actions">
                 <SpringButton href="mailto:sameer@nagorikprotidin.com">Request Sponsorship Deck</SpringButton>
-                <SpringButton href="info/International%20Trade%20%26%20Tourism%20Fair%202026.pptx" variant="outlineDark" download>
-                  <Download size={16} /> Download Event Deck
-                </SpringButton>
-                <SpringButton href="info/Sponsor%20Invitation.docx" variant="outlineDark" download>
-                  <Download size={16} /> Download Sponsor Letter
-                </SpringButton>
               </div>
             </RevealOnScroll>
             <RevealOnScroll delay={4}>

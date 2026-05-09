@@ -56,15 +56,15 @@ export default function HomePage() {
             <div className="hs-label">Organised by</div>
             <div className="hs-value">
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
-                <img src="assets/img/organizers/bloodman-white.webp" alt="Bloodman" style={{ height: 28 }} />
+                <img src="assets/img/organizers/bloodman-white.webp" alt="Bloodman" style={{ height: 36 }} />
                 <span style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.75rem' }}>&</span>
-                <span style={{ color: 'var(--white)', fontSize: '0.85rem', fontWeight: 600 }}>GamePlay</span>
+                <span style={{ color: 'var(--white)', fontSize: '1rem', fontWeight: 700 }}>GamePlay</span>
               </div>
             </div>
             <div className="hs-divider" />
             <div className="hs-label">In association with</div>
             <div className="hs-value">
-              <img src="assets/img/organizers/nagorik-protidin-white.webp" alt="Nagorik Protidin" style={{ height: 24 }} />
+              <img src="assets/img/organizers/nagorik-protidin-white.webp" alt="Nagorik Protidin" style={{ height: 32 }} />
             </div>
           </div>
           <div className="hs-ticker">

@@ -23,7 +23,7 @@ export default function Footer() {
               <img
                 src="assets/img/organizers/bloodman-white.webp"
                 alt="Bloodman"
-                width="100"
+                width="140"
                 loading="lazy"
               />
               <span className="footer__org-name">GamePlay</span>
@@ -33,7 +33,7 @@ export default function Footer() {
               <img
                 src="assets/img/organizers/nagorik-protidin-white.webp"
                 alt="Nagorik Protidin"
-                width="120"
+                width="160"
                 loading="lazy"
               />
             </div>

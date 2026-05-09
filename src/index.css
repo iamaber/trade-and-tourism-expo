@@ -564,16 +564,17 @@ button:focus-visible {
 }
 
 .footer__org-logos img {
-  height: 28px;
+  height: 36px;
   width: auto;
-  opacity: 0.78;
+  opacity: 0.85;
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-.footer__org-logos .footer__org-logo--bloodman {
-  height: 42px;
-  opacity: 1;
-  filter: drop-shadow(0 1px 0 rgba(255, 255, 255, 0.55)) drop-shadow(0 0 10px rgba(255, 255, 255, 0.18));
+.footer__org-logos .footer__org-name {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
 }
 
 .footer__org-logos img:hover {
@@ -2064,14 +2065,9 @@ button:focus-visible {
 }
 
 .sp-hero__partner-logos img {
-  max-height: 34px;
+  max-height: 44px;
   width: auto;
   display: block;
-}
-
-.sp-hero__partner-logos .sp-hero__partner-logo--bloodman {
-  max-height: 52px;
-  filter: drop-shadow(0 1px 0 rgba(255, 255, 255, 0.7)) drop-shadow(0 0 12px rgba(255, 255, 255, 0.2));
 }
 
 .sp-hero__partner-logos--light img {
